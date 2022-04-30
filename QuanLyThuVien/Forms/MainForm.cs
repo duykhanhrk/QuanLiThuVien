@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyThuVien.DataObject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace QuanLyThuVien.Forms
 {
     public partial class MainForm : Form
     {
+        private Librarian librarian;
         private Form form;
 
         public MainForm()
@@ -19,16 +21,17 @@ namespace QuanLyThuVien.Forms
             InitializeComponent();
         }
 
-        private void SetContentForm(Type type)
+        private void SetContentForm(Type type, params Object[] args)
         {
             if (type == null) return;
 
             if (form == null || form.GetType() != type)
-                form = (Form)Activator.CreateInstance(type);
+                form = (Form)Activator.CreateInstance(type, args);
 
             form.Dock = DockStyle.Fill;
             form.TopLevel = false;
             form.TopMost = true;
+            form.AutoScroll = true;
             form.FormBorderStyle = FormBorderStyle.None;
 
             contentPanel.Controls.Clear();
@@ -46,7 +49,28 @@ namespace QuanLyThuVien.Forms
             if (!loginForm.Logged)
                 Close();
 
-            SetContentForm(typeof(ProfileForm));
+            librarian = loginForm.Librarian;
+            SetContentForm(typeof(ProfileForm), librarian);
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            SetContentForm(typeof(ProfileForm), librarian);
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+            SetContentForm(typeof(LibrarianForm));
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            SetContentForm(typeof(BookForm));
+        }
+
+        private void authorBT_Click(object sender, EventArgs e)
+        {
+            SetContentForm(typeof(AuthorForm));
         }
     }
 }

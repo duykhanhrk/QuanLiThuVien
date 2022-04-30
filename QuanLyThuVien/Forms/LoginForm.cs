@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyThuVien.DataObject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,12 @@ namespace QuanLyThuVien.Forms
             get { return _logged; }
         }
 
+        private Librarian _librarian;
+        public Librarian Librarian
+        {
+            get { return _librarian; }
+        }
+
         public LoginForm()
         {
             InitializeComponent();
@@ -30,7 +37,7 @@ namespace QuanLyThuVien.Forms
         {
             try
             {
-                DataObject.Librarian librarian = authRepository.Login(iDTB.Text, passwordTB.Text);
+                _librarian = authRepository.Login(iDTB.Text, passwordTB.Text);
                 _logged = true;
                 Close();
             }
@@ -38,7 +45,6 @@ namespace QuanLyThuVien.Forms
             {
                 MessageBox.Show(ex.Message, "Thông báo");
             }
-            
         }
     }
 }

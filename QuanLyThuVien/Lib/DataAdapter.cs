@@ -23,7 +23,7 @@ namespace QuanLyThuVien.Lib
                 foreach (var property in properties)
                 {
                     columnAttribute = (ColumnAttribute)property.GetCustomAttributes(typeof(ColumnAttribute), true).FirstOrDefault();
-                    if (columnAttribute != null)
+                    if (columnAttribute == null)
                         continue;
 
                     property.SetValue(t, reader[columnAttribute.Name]);
