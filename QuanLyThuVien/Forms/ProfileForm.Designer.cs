@@ -78,7 +78,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.iDTB = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.updatePwTB = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.updatePwBT = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.passwordCfTB = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.passwordTB = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -179,6 +179,7 @@
             this.updateInfoBT.TextMarginLeft = 0;
             this.updateInfoBT.TextPadding = new System.Windows.Forms.Padding(0);
             this.updateInfoBT.UseDefaultRadiusAndThickness = true;
+            this.updateInfoBT.Click += new System.EventHandler(this.updateInfoBT_Click);
             // 
             // addressTB
             // 
@@ -687,94 +688,96 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "ID";
             // 
-            // updatePwTB
+            // updatePwBT
             // 
-            this.updatePwTB.AllowAnimations = true;
-            this.updatePwTB.AllowMouseEffects = true;
-            this.updatePwTB.AllowToggling = false;
-            this.updatePwTB.AnimationSpeed = 200;
-            this.updatePwTB.AutoGenerateColors = false;
-            this.updatePwTB.AutoRoundBorders = false;
-            this.updatePwTB.AutoSizeLeftIcon = true;
-            this.updatePwTB.AutoSizeRightIcon = true;
-            this.updatePwTB.BackColor = System.Drawing.Color.Transparent;
-            this.updatePwTB.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            this.updatePwTB.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("updatePwTB.BackgroundImage")));
-            this.updatePwTB.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.updatePwTB.ButtonText = "Cập nhật";
-            this.updatePwTB.ButtonTextMarginLeft = 0;
-            this.updatePwTB.ColorContrastOnClick = 45;
-            this.updatePwTB.ColorContrastOnHover = 45;
-            this.updatePwTB.Cursor = System.Windows.Forms.Cursors.Default;
+            this.updatePwBT.AllowAnimations = true;
+            this.updatePwBT.AllowMouseEffects = true;
+            this.updatePwBT.AllowToggling = false;
+            this.updatePwBT.AnimationSpeed = 200;
+            this.updatePwBT.AutoGenerateColors = false;
+            this.updatePwBT.AutoRoundBorders = false;
+            this.updatePwBT.AutoSizeLeftIcon = true;
+            this.updatePwBT.AutoSizeRightIcon = true;
+            this.updatePwBT.BackColor = System.Drawing.Color.Transparent;
+            this.updatePwBT.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
+            this.updatePwBT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("updatePwBT.BackgroundImage")));
+            this.updatePwBT.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.updatePwBT.ButtonText = "Cập nhật";
+            this.updatePwBT.ButtonTextMarginLeft = 0;
+            this.updatePwBT.ColorContrastOnClick = 45;
+            this.updatePwBT.ColorContrastOnHover = 45;
+            this.updatePwBT.Cursor = System.Windows.Forms.Cursors.Default;
             borderEdges2.BottomLeft = true;
             borderEdges2.BottomRight = true;
             borderEdges2.TopLeft = true;
             borderEdges2.TopRight = true;
-            this.updatePwTB.CustomizableEdges = borderEdges2;
-            this.updatePwTB.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.updatePwTB.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.updatePwTB.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.updatePwTB.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.updatePwTB.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.updatePwTB.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.updatePwTB.ForeColor = System.Drawing.Color.White;
-            this.updatePwTB.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.updatePwTB.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.updatePwTB.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.updatePwTB.IconMarginLeft = 11;
-            this.updatePwTB.IconPadding = 10;
-            this.updatePwTB.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.updatePwTB.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.updatePwTB.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.updatePwTB.IconSize = 25;
-            this.updatePwTB.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            this.updatePwTB.IdleBorderRadius = 8;
-            this.updatePwTB.IdleBorderThickness = 1;
-            this.updatePwTB.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            this.updatePwTB.IdleIconLeftImage = null;
-            this.updatePwTB.IdleIconRightImage = null;
-            this.updatePwTB.IndicateFocus = false;
-            this.updatePwTB.Location = new System.Drawing.Point(192, 165);
-            this.updatePwTB.Name = "updatePwTB";
-            this.updatePwTB.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.updatePwTB.OnDisabledState.BorderRadius = 8;
-            this.updatePwTB.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.updatePwTB.OnDisabledState.BorderThickness = 1;
-            this.updatePwTB.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.updatePwTB.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.updatePwTB.OnDisabledState.IconLeftImage = null;
-            this.updatePwTB.OnDisabledState.IconRightImage = null;
-            this.updatePwTB.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(83)))), ((int)(((byte)(164)))));
-            this.updatePwTB.onHoverState.BorderRadius = 8;
-            this.updatePwTB.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.updatePwTB.onHoverState.BorderThickness = 1;
-            this.updatePwTB.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(83)))), ((int)(((byte)(164)))));
-            this.updatePwTB.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.updatePwTB.onHoverState.IconLeftImage = null;
-            this.updatePwTB.onHoverState.IconRightImage = null;
-            this.updatePwTB.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            this.updatePwTB.OnIdleState.BorderRadius = 8;
-            this.updatePwTB.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.updatePwTB.OnIdleState.BorderThickness = 1;
-            this.updatePwTB.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            this.updatePwTB.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.updatePwTB.OnIdleState.IconLeftImage = null;
-            this.updatePwTB.OnIdleState.IconRightImage = null;
-            this.updatePwTB.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
-            this.updatePwTB.OnPressedState.BorderRadius = 8;
-            this.updatePwTB.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.updatePwTB.OnPressedState.BorderThickness = 1;
-            this.updatePwTB.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
-            this.updatePwTB.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.updatePwTB.OnPressedState.IconLeftImage = null;
-            this.updatePwTB.OnPressedState.IconRightImage = null;
-            this.updatePwTB.Size = new System.Drawing.Size(150, 39);
-            this.updatePwTB.TabIndex = 37;
-            this.updatePwTB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.updatePwTB.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.updatePwTB.TextMarginLeft = 0;
-            this.updatePwTB.TextPadding = new System.Windows.Forms.Padding(0);
-            this.updatePwTB.UseDefaultRadiusAndThickness = true;
+            this.updatePwBT.CustomizableEdges = borderEdges2;
+            this.updatePwBT.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.updatePwBT.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.updatePwBT.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.updatePwBT.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.updatePwBT.Enabled = false;
+            this.updatePwBT.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.updatePwBT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.updatePwBT.ForeColor = System.Drawing.Color.White;
+            this.updatePwBT.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.updatePwBT.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.updatePwBT.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.updatePwBT.IconMarginLeft = 11;
+            this.updatePwBT.IconPadding = 10;
+            this.updatePwBT.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.updatePwBT.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.updatePwBT.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.updatePwBT.IconSize = 25;
+            this.updatePwBT.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
+            this.updatePwBT.IdleBorderRadius = 8;
+            this.updatePwBT.IdleBorderThickness = 1;
+            this.updatePwBT.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
+            this.updatePwBT.IdleIconLeftImage = null;
+            this.updatePwBT.IdleIconRightImage = null;
+            this.updatePwBT.IndicateFocus = false;
+            this.updatePwBT.Location = new System.Drawing.Point(192, 165);
+            this.updatePwBT.Name = "updatePwBT";
+            this.updatePwBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.updatePwBT.OnDisabledState.BorderRadius = 8;
+            this.updatePwBT.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.updatePwBT.OnDisabledState.BorderThickness = 1;
+            this.updatePwBT.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.updatePwBT.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.updatePwBT.OnDisabledState.IconLeftImage = null;
+            this.updatePwBT.OnDisabledState.IconRightImage = null;
+            this.updatePwBT.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(83)))), ((int)(((byte)(164)))));
+            this.updatePwBT.onHoverState.BorderRadius = 8;
+            this.updatePwBT.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.updatePwBT.onHoverState.BorderThickness = 1;
+            this.updatePwBT.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(83)))), ((int)(((byte)(164)))));
+            this.updatePwBT.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.updatePwBT.onHoverState.IconLeftImage = null;
+            this.updatePwBT.onHoverState.IconRightImage = null;
+            this.updatePwBT.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
+            this.updatePwBT.OnIdleState.BorderRadius = 8;
+            this.updatePwBT.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.updatePwBT.OnIdleState.BorderThickness = 1;
+            this.updatePwBT.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
+            this.updatePwBT.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.updatePwBT.OnIdleState.IconLeftImage = null;
+            this.updatePwBT.OnIdleState.IconRightImage = null;
+            this.updatePwBT.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
+            this.updatePwBT.OnPressedState.BorderRadius = 8;
+            this.updatePwBT.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.updatePwBT.OnPressedState.BorderThickness = 1;
+            this.updatePwBT.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
+            this.updatePwBT.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.updatePwBT.OnPressedState.IconLeftImage = null;
+            this.updatePwBT.OnPressedState.IconRightImage = null;
+            this.updatePwBT.Size = new System.Drawing.Size(150, 39);
+            this.updatePwBT.TabIndex = 37;
+            this.updatePwBT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.updatePwBT.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.updatePwBT.TextMarginLeft = 0;
+            this.updatePwBT.TextPadding = new System.Windows.Forms.Padding(0);
+            this.updatePwBT.UseDefaultRadiusAndThickness = true;
+            this.updatePwBT.Click += new System.EventHandler(this.updatePwTB_Click);
             // 
             // passwordCfTB
             // 
@@ -830,7 +833,7 @@
             stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.passwordCfTB.OnIdleState = stateProperties24;
             this.passwordCfTB.Padding = new System.Windows.Forms.Padding(3);
-            this.passwordCfTB.PasswordChar = '\0';
+            this.passwordCfTB.PasswordChar = '*';
             this.passwordCfTB.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.passwordCfTB.PlaceholderText = "Enter text";
             this.passwordCfTB.ReadOnly = false;
@@ -849,6 +852,7 @@
             this.passwordCfTB.TextPlaceholder = "Enter text";
             this.passwordCfTB.UseSystemPasswordChar = false;
             this.passwordCfTB.WordWrap = true;
+            this.passwordCfTB.TextChange += new System.EventHandler(this.passwordTB_TextChange);
             // 
             // label12
             // 
@@ -914,7 +918,7 @@
             stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.passwordTB.OnIdleState = stateProperties28;
             this.passwordTB.Padding = new System.Windows.Forms.Padding(3);
-            this.passwordTB.PasswordChar = '\0';
+            this.passwordTB.PasswordChar = '*';
             this.passwordTB.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.passwordTB.PlaceholderText = "Enter text";
             this.passwordTB.ReadOnly = false;
@@ -933,6 +937,7 @@
             this.passwordTB.TextPlaceholder = "Enter text";
             this.passwordTB.UseSystemPasswordChar = false;
             this.passwordTB.WordWrap = true;
+            this.passwordTB.TextChange += new System.EventHandler(this.passwordTB_TextChange);
             // 
             // label13
             // 
@@ -963,7 +968,6 @@
             this.usernameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.usernameTB.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.usernameTB.DefaultText = "";
-            this.usernameTB.Enabled = false;
             this.usernameTB.FillColor = System.Drawing.Color.White;
             this.usernameTB.HideSelection = true;
             this.usernameTB.IconLeft = null;
@@ -1023,11 +1027,11 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(111, 41);
+            this.label14.Location = new System.Drawing.Point(65, 41);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(19, 15);
+            this.label14.Size = new System.Drawing.Size(65, 15);
             this.label14.TabIndex = 31;
-            this.label14.Text = "ID";
+            this.label14.Text = "Username";
             // 
             // groupBox1
             // 
@@ -1061,7 +1065,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.usernameTB);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.updatePwTB);
+            this.groupBox2.Controls.Add(this.updatePwBT);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.passwordCfTB);
             this.groupBox2.Controls.Add(this.passwordTB);
@@ -1109,7 +1113,7 @@
         private System.Windows.Forms.Label label2;
         private Bunifu.UI.WinForms.BunifuTextBox iDTB;
         private System.Windows.Forms.Label label1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton updatePwTB;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton updatePwBT;
         private Bunifu.UI.WinForms.BunifuTextBox passwordCfTB;
         private System.Windows.Forms.Label label12;
         private Bunifu.UI.WinForms.BunifuTextBox passwordTB;

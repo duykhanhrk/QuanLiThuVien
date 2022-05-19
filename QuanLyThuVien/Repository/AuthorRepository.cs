@@ -10,26 +10,17 @@ using System.Threading.Tasks;
 
 namespace QuanLyThuVien.Repository
 {
-    public class AuthorRepository
+    public class AuthorRepository : RepositoryAction<Author>
     {
-        /// <summary>
-        /// This method use to get all authors form Database
-        /// </summary>
-        public List<Author> GetAll(string search = "")
+        public List<Author> GetAll(string search)
         {
             string commandText = "SELECT * FROM Author WHERE Id LIKE @search OR LastName + ' ' + FirstName LIKE @search OR Email LIKE @search OR Address LIKE @search";
             SqlParameter parameterSearch = new SqlParameter("@search", $"%{search.Trim()}%");
-            SqlDataReader reader = DbConnection.ExecuteReader(commandText, CommandType.Text, parameterSearch);
-            List<Author> list = new List<Author>();
-            DataAdapter.Fill(reader, list);
 
-            return list;
+            return Get(commandText, parameterSearch);
         }
 
-        // <summary>
-        /// This method use to get a max id of authors form Database
-        /// </summary>
-        public string GetMaxId()
+        public string FindMaxId()
         {
             string commandText = "SELECT MAX(Id) FROM Author WHERE Id LIKE 'AT[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'";
             string maxId = (string)DbConnection.ExecuteScalar(commandText, CommandType.Text);
@@ -37,30 +28,12 @@ namespace QuanLyThuVien.Repository
             return maxId;
         }
 
-        /// <summary>
-        /// This method use to insert a new author into Database
-        /// </summary>
-        public void Create(Author author)
+        public List<Author> GetAllOfBookTitle(BookTitle bookTitle)
         {
-            // Validate
-            DataValidation.Validate(author);
+            string commandText = $"SELECT {tableName}.* FROM {tableName} INNER JOIN BookTitle_Author ON {tableName}.Id = BookTitle_Author.AuthorId AND BookTitle_Author.BookTitleISBN = @iSBN";
+            SqlParameter parameterISBN = new SqlParameter("@ISBN", bookTitle.ISBN);
 
-            // Command Text
-            string commandText = "sp_create_author";
-
-            // Params
-            SqlParameter parameterId = new SqlParameter("@id", author.Id);
-            SqlParameter parameterFirstName = new SqlParameter("@first_name", author.FirstName);
-            SqlParameter parameterLastName = new SqlParameter("@last_name", author.LastName);
-            SqlParameter parameterBirthday = new SqlParameter("@birthday", author.Birthday);
-            SqlParameter parameterSex = new SqlParameter("@sex", author.Sex);
-            SqlParameter parameterAddress = new SqlParameter("@address", author.Address);
-            SqlParameter parameterEmail = new SqlParameter("@email", author.Email);
-
-            // Execute
-            int rows = DbConnection.ExecuteNonQuery(commandText, CommandType.StoredProcedure,
-                parameterId, parameterFirstName, parameterLastName, parameterBirthday,
-                parameterSex, parameterAddress, parameterEmail);
+            return Get(commandText, parameterISBN);
         }
     }
 }

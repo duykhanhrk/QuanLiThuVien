@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,11 +22,27 @@ namespace QuanLyThuVien.Lib
                 var properties = typeof(T).GetProperties();
 
                 ColumnAttribute columnAttribute;
+                RequiredAttribute requiredAttribute;
                 foreach (var property in properties)
                 {
                     columnAttribute = (ColumnAttribute)property.GetCustomAttributes(typeof(ColumnAttribute), true).FirstOrDefault();
                     if (columnAttribute == null)
                         continue;
+
+                    requiredAttribute = (RequiredAttribute)property.GetCustomAttribute(typeof(RequiredAttribute), true);
+                    if (requiredAttribute == null)
+                    {
+                        try
+                        {
+                            property.SetValue(t, reader[columnAttribute.Name]);
+                        }
+                        catch
+                        {
+                            // pass
+                        }
+
+                        continue;
+                    }
 
                     property.SetValue(t, reader[columnAttribute.Name]);
                 }

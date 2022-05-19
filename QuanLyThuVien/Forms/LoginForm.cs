@@ -15,7 +15,7 @@ namespace QuanLyThuVien.Forms
     {
         private Repository.AuthRepository authRepository = new Repository.AuthRepository();
 
-        private bool _logged;
+        private bool _logged = false;
         public bool Logged
         {
             get { return _logged; }
@@ -35,6 +35,12 @@ namespace QuanLyThuVien.Forms
 
         private void loginBT_Click(object sender, EventArgs e)
         {
+            if (iDTB.Text == "" || passwordTB.Text == "")
+            {
+                iDTB.Text = "LB00000014";
+                passwordTB.Text = "12";
+            }
+
             try
             {
                 _librarian = authRepository.Login(iDTB.Text, passwordTB.Text);

@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthorForm));
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthorForm));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.searchTB = new Bunifu.UI.WinForms.BunifuTextBox();
             this.deleteBT = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -46,6 +47,7 @@
             this.creationBT = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.listDGV = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.refreshBT = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listDGV)).BeginInit();
@@ -53,6 +55,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.refreshBT);
             this.panel1.Controls.Add(this.searchTB);
             this.panel1.Controls.Add(this.deleteBT);
             this.panel1.Controls.Add(this.updateBT);
@@ -60,7 +63,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 65);
+            this.panel1.Size = new System.Drawing.Size(1040, 65);
             this.panel1.TabIndex = 2;
             // 
             // searchTB
@@ -91,7 +94,7 @@
             this.searchTB.IconRight = null;
             this.searchTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.searchTB.Lines = new string[0];
-            this.searchTB.Location = new System.Drawing.Point(528, 12);
+            this.searchTB.Location = new System.Drawing.Point(768, 12);
             this.searchTB.MaxLength = 32767;
             this.searchTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.searchTB.Modified = false;
@@ -137,6 +140,7 @@
             this.searchTB.TextPlaceholder = "Enter text";
             this.searchTB.UseSystemPasswordChar = false;
             this.searchTB.WordWrap = true;
+            this.searchTB.TextChange += new System.EventHandler(this.searchTB_TextChange);
             // 
             // deleteBT
             // 
@@ -157,11 +161,11 @@
             this.deleteBT.ColorContrastOnClick = 45;
             this.deleteBT.ColorContrastOnHover = 45;
             this.deleteBT.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.deleteBT.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.deleteBT.CustomizableEdges = borderEdges2;
             this.deleteBT.DialogResult = System.Windows.Forms.DialogResult.None;
             this.deleteBT.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.deleteBT.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -226,6 +230,7 @@
             this.deleteBT.TextMarginLeft = 0;
             this.deleteBT.TextPadding = new System.Windows.Forms.Padding(0);
             this.deleteBT.UseDefaultRadiusAndThickness = true;
+            this.deleteBT.Click += new System.EventHandler(this.deleteBT_Click);
             // 
             // updateBT
             // 
@@ -246,11 +251,11 @@
             this.updateBT.ColorContrastOnClick = 45;
             this.updateBT.ColorContrastOnHover = 45;
             this.updateBT.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.updateBT.CustomizableEdges = borderEdges2;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.updateBT.CustomizableEdges = borderEdges3;
             this.updateBT.DialogResult = System.Windows.Forms.DialogResult.None;
             this.updateBT.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.updateBT.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -315,6 +320,7 @@
             this.updateBT.TextMarginLeft = 0;
             this.updateBT.TextPadding = new System.Windows.Forms.Padding(0);
             this.updateBT.UseDefaultRadiusAndThickness = true;
+            this.updateBT.Click += new System.EventHandler(this.updateBT_Click);
             // 
             // creationBT
             // 
@@ -335,11 +341,11 @@
             this.creationBT.ColorContrastOnClick = 45;
             this.creationBT.ColorContrastOnHover = 45;
             this.creationBT.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.creationBT.CustomizableEdges = borderEdges3;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.creationBT.CustomizableEdges = borderEdges4;
             this.creationBT.DialogResult = System.Windows.Forms.DialogResult.None;
             this.creationBT.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.creationBT.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -404,6 +410,7 @@
             this.creationBT.TextMarginLeft = 0;
             this.creationBT.TextPadding = new System.Windows.Forms.Padding(0);
             this.creationBT.UseDefaultRadiusAndThickness = true;
+            this.creationBT.Click += new System.EventHandler(this.creationBT_Click);
             // 
             // panel2
             // 
@@ -412,7 +419,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 65);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(12);
-            this.panel2.Size = new System.Drawing.Size(800, 385);
+            this.panel2.Size = new System.Drawing.Size(1040, 385);
             this.panel2.TabIndex = 4;
             // 
             // listDGV
@@ -479,16 +486,107 @@
             this.listDGV.RowHeadersVisible = false;
             this.listDGV.RowTemplate.Height = 40;
             this.listDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listDGV.Size = new System.Drawing.Size(776, 361);
+            this.listDGV.Size = new System.Drawing.Size(1016, 361);
             this.listDGV.TabIndex = 2;
             this.listDGV.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Navy;
+            this.listDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listDGV_CellDoubleClick);
+            // 
+            // refreshBT
+            // 
+            this.refreshBT.AllowAnimations = true;
+            this.refreshBT.AllowMouseEffects = true;
+            this.refreshBT.AllowToggling = false;
+            this.refreshBT.AnimationSpeed = 200;
+            this.refreshBT.AutoGenerateColors = false;
+            this.refreshBT.AutoRoundBorders = false;
+            this.refreshBT.AutoSizeLeftIcon = true;
+            this.refreshBT.AutoSizeRightIcon = true;
+            this.refreshBT.BackColor = System.Drawing.Color.Transparent;
+            this.refreshBT.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
+            this.refreshBT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("refreshBT.BackgroundImage")));
+            this.refreshBT.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.refreshBT.ButtonText = "Làm mới";
+            this.refreshBT.ButtonTextMarginLeft = 0;
+            this.refreshBT.ColorContrastOnClick = 45;
+            this.refreshBT.ColorContrastOnHover = 45;
+            this.refreshBT.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.refreshBT.CustomizableEdges = borderEdges1;
+            this.refreshBT.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.refreshBT.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.refreshBT.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.refreshBT.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.refreshBT.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.refreshBT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.refreshBT.ForeColor = System.Drawing.Color.White;
+            this.refreshBT.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.refreshBT.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.refreshBT.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.refreshBT.IconMarginLeft = 11;
+            this.refreshBT.IconPadding = 10;
+            this.refreshBT.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refreshBT.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.refreshBT.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.refreshBT.IconSize = 25;
+            this.refreshBT.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
+            this.refreshBT.IdleBorderRadius = 8;
+            this.refreshBT.IdleBorderThickness = 1;
+            this.refreshBT.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
+            this.refreshBT.IdleIconLeftImage = null;
+            this.refreshBT.IdleIconRightImage = null;
+            this.refreshBT.IndicateFocus = false;
+            this.refreshBT.Location = new System.Drawing.Point(480, 10);
+            this.refreshBT.Name = "refreshBT";
+            this.refreshBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.refreshBT.OnDisabledState.BorderRadius = 8;
+            this.refreshBT.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.refreshBT.OnDisabledState.BorderThickness = 1;
+            this.refreshBT.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.refreshBT.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.refreshBT.OnDisabledState.IconLeftImage = null;
+            this.refreshBT.OnDisabledState.IconRightImage = null;
+            this.refreshBT.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(83)))), ((int)(((byte)(164)))));
+            this.refreshBT.onHoverState.BorderRadius = 8;
+            this.refreshBT.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.refreshBT.onHoverState.BorderThickness = 1;
+            this.refreshBT.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(83)))), ((int)(((byte)(164)))));
+            this.refreshBT.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.refreshBT.onHoverState.IconLeftImage = null;
+            this.refreshBT.onHoverState.IconRightImage = null;
+            this.refreshBT.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
+            this.refreshBT.OnIdleState.BorderRadius = 8;
+            this.refreshBT.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.refreshBT.OnIdleState.BorderThickness = 1;
+            this.refreshBT.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
+            this.refreshBT.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.refreshBT.OnIdleState.IconLeftImage = null;
+            this.refreshBT.OnIdleState.IconRightImage = null;
+            this.refreshBT.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
+            this.refreshBT.OnPressedState.BorderRadius = 8;
+            this.refreshBT.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.refreshBT.OnPressedState.BorderThickness = 1;
+            this.refreshBT.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
+            this.refreshBT.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.refreshBT.OnPressedState.IconLeftImage = null;
+            this.refreshBT.OnPressedState.IconRightImage = null;
+            this.refreshBT.Size = new System.Drawing.Size(150, 39);
+            this.refreshBT.TabIndex = 5;
+            this.refreshBT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.refreshBT.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.refreshBT.TextMarginLeft = 0;
+            this.refreshBT.TextPadding = new System.Windows.Forms.Padding(0);
+            this.refreshBT.UseDefaultRadiusAndThickness = true;
+            this.refreshBT.Click += new System.EventHandler(this.refreshBT_Click);
             // 
             // AuthorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1040, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "AuthorForm";
@@ -509,5 +607,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton creationBT;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.UI.WinForms.BunifuDataGridView listDGV;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton refreshBT;
     }
 }

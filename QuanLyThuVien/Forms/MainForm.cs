@@ -1,4 +1,5 @@
 ﻿using QuanLyThuVien.DataObject;
+using QuanLyThuVien.Lib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,6 @@ namespace QuanLyThuVien.Forms
 {
     public partial class MainForm : Form
     {
-        private Librarian librarian;
         private Form form;
 
         public MainForm()
@@ -49,13 +49,16 @@ namespace QuanLyThuVien.Forms
             if (!loginForm.Logged)
                 Close();
 
-            librarian = loginForm.Librarian;
-            SetContentForm(typeof(ProfileForm), librarian);
+            // Save current librarian to Archive
+            Archive.Save("CurrentLibrarian", loginForm.Librarian);
+
+            // Show profile form
+            SetContentForm(typeof(ProfileForm), loginForm.Librarian.Id);
         }
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            SetContentForm(typeof(ProfileForm), librarian);
+            SetContentForm(typeof(ProfileForm), (Archive.Get("CurrentLibrarian") as Librarian).Id);
         }
 
         private void bunifuButton4_Click(object sender, EventArgs e)
@@ -65,12 +68,37 @@ namespace QuanLyThuVien.Forms
 
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
-            SetContentForm(typeof(BookForm));
+            SetContentForm(typeof(BookTitleForm));
         }
 
         private void authorBT_Click(object sender, EventArgs e)
         {
             SetContentForm(typeof(AuthorForm));
+        }
+        
+        private void readerBT_Click(object sender, EventArgs e)
+        {
+            SetContentForm(typeof(ReaderForm));
+        }
+
+        private void bookBT_Click(object sender, EventArgs e)
+        {
+            SetContentForm(typeof(BookForm));
+        }
+
+        private void lendingSlipBT_Click(object sender, EventArgs e)
+        {
+            SetContentForm(typeof(LendingSlipForm));
+        }
+
+        private void simulationBT_Click(object sender, EventArgs e)
+        {
+            SetContentForm(typeof(SimulationForm));
+        }
+
+        private void libraryCardBT_Click(object sender, EventArgs e)
+        {
+            SetContentForm(typeof(LibraryCardForm));
         }
     }
 }

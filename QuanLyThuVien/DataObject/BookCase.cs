@@ -12,12 +12,14 @@ namespace QuanLyThuVien.DataObject
     public class BookCase
     {
         [Column("Id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
+        [Required]
         [DisplayName("Thông tin")]
         [Column("Description")]
         public string Description { get; set; }
 
+        [Required]
         [DisplayName("Kích thước")]
         [Column("Size")]
         public int Size { get; set; }

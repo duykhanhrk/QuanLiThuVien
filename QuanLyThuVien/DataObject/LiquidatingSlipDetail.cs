@@ -14,5 +14,7 @@ namespace QuanLyThuVien.DataObject
 
         public string Price { get; set; }
 
+        public string Notes { get; set; }
+
     }
 }

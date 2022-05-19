@@ -10,20 +10,22 @@ using System.Threading.Tasks;
 
 namespace QuanLyThuVien.Repository
 {
-    public class BookCategoryRepository
+    public class BookCategoryRepository : RepositoryAction<BookCategory>
     {
-        /// <summary>
-        /// This method use to get all book categories form Database
-        /// </summary>
         public List<BookCategory> GetAll(string search = "")
         {
-            string commandText = "SELECT * FROM BookCategory WHERE Name LIKE @search";
+            string commandText = $"SELECT * FROM {tableName} WHERE Name LIKE @search";
             SqlParameter parameterSearch = new SqlParameter("@search", $"%{search.Trim()}%");
-            SqlDataReader reader = DbConnection.ExecuteReader(commandText, CommandType.Text, parameterSearch);
-            List<BookCategory> list = new List<BookCategory>();
-            DataAdapter.Fill(reader, list);
 
-            return list;
+            return Get(commandText, parameterSearch);
+        }
+
+        public List<BookCategory> GetAllOfBookTitle(BookTitle bookTitle)
+        {
+            string commandText = $"SELECT {tableName}.* FROM {tableName} INNER JOIN BookTitle_BookCategory ON {tableName}.Id = BookTitle_BookCategory.BookCategoryId AND BookTitle_BookCategory.BookTitleISBN = @iSBN";
+            SqlParameter parameterISBN = new SqlParameter("@ISBN", bookTitle.ISBN);
+
+            return Get(commandText, parameterISBN);
         }
     }
 }

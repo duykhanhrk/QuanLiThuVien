@@ -1,12 +1,8 @@
 ﻿using QuanLyThuVien.Lib;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace QuanLyThuVien.DataObject
 {
@@ -20,6 +16,7 @@ namespace QuanLyThuVien.DataObject
         [DisplayName("Tên đăng nhập")]
         public string Username { get; set; }
 
+        [Required]
         [Column("Enable")]
         public bool Enable { get; set; }
 
@@ -43,11 +40,21 @@ namespace QuanLyThuVien.DataObject
         {
         }
 
+        public Account(string username, string password)
+        {
+            Debug.WriteLine(PasswordSecurity.Encrypt(password));
+            Username = username;
+            Password = password;
+            Debug.WriteLine(Password);
+        }
+
         public Account(string username, string password, bool enable)
         {
+            Debug.WriteLine(PasswordSecurity.Encrypt(password));
             Username = username;
             Password = password;
             Enable = enable;
+            Debug.WriteLine(Password);
         }
 
         public Account(string username, string password, bool enable, string userableID, string userableType)

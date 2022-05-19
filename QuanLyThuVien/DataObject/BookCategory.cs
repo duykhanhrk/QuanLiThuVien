@@ -11,14 +11,18 @@ namespace QuanLyThuVien.DataObject
 {
     public class BookCategory
     {
-        [Required]
         [Column("Id")]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [Required(AllowEmptyStrings = false)]
         [MaxLength(100)]
         [DisplayName("Tên")]
         [Column("Name")]
         public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

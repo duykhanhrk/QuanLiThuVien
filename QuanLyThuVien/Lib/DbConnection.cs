@@ -3,6 +3,7 @@ using System.Data;
 using System.Collections.Generic;
 using System.Configuration;
 using System;
+using System.Diagnostics;
 
 namespace QuanLyThuVien.Lib
 {
@@ -17,6 +18,9 @@ namespace QuanLyThuVien.Lib
                 {
                     cmd.CommandType = commandType;
                     cmd.Parameters.AddRange(parameters);
+
+                    // Debug
+                    Debug.WriteLine(cmd.CommandText);
 
                     try
                     {
@@ -66,6 +70,9 @@ namespace QuanLyThuVien.Lib
                     cmd.CommandType = commandType;
                     cmd.Parameters.AddRange(parameters);
 
+                    // Debug
+                    Debug.WriteLine(cmd.CommandText);
+
                     try
                     {
                         conn.Open();
@@ -114,6 +121,9 @@ namespace QuanLyThuVien.Lib
                 cmd.CommandType = commandType;
                 cmd.Parameters.AddRange(parameters);
 
+                // Debug
+                Debug.WriteLine(cmd.CommandText);
+
                 try
                 {
                     conn.Open();
@@ -151,6 +161,56 @@ namespace QuanLyThuVien.Lib
                 SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
                 return reader;
+            }
+        }
+
+        public static DataTable ExecuteAdapter(string commandText, params SqlParameter[] parameters)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SA"].ConnectionString;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            using (SqlDataAdapter da = new SqlDataAdapter(commandText, conn))
+            {
+                da.SelectCommand.Parameters.AddRange(parameters);
+
+                try
+                {
+                    conn.Open();
+                }
+                catch
+                {
+                    throw new Exception("Không thể kết nối tới cơ sở dữ liệu!");
+                }
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
+
+        public static DataTable ExecuteAdapter(string connectionStringName, string commandText, params SqlParameter[] parameters)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            using (SqlDataAdapter da = new SqlDataAdapter(commandText, conn))
+            {
+                da.SelectCommand.Parameters.AddRange(parameters);
+
+                try
+                {
+                    conn.Open();
+                }
+                catch
+                {
+                    throw new Exception("Không thể kết nối tới cơ sở dữ liệu!");
+                }
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
             }
         }
     }
