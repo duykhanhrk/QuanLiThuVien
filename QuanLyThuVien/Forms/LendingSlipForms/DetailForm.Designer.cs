@@ -71,7 +71,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(397, 348);
+            this.panel2.Size = new System.Drawing.Size(397, 370);
             this.panel2.TabIndex = 16;
             // 
             // detailsBT
@@ -121,7 +121,7 @@
             this.detailsBT.IdleIconLeftImage = null;
             this.detailsBT.IdleIconRightImage = null;
             this.detailsBT.IndicateFocus = false;
-            this.detailsBT.Location = new System.Drawing.Point(235, 174);
+            this.detailsBT.Location = new System.Drawing.Point(265, 174);
             this.detailsBT.Name = "detailsBT";
             this.detailsBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.detailsBT.OnDisabledState.BorderRadius = 8;
@@ -155,7 +155,7 @@
             this.detailsBT.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.detailsBT.OnPressedState.IconLeftImage = null;
             this.detailsBT.OnPressedState.IconRightImage = null;
-            this.detailsBT.Size = new System.Drawing.Size(150, 39);
+            this.detailsBT.Size = new System.Drawing.Size(120, 35);
             this.detailsBT.TabIndex = 71;
             this.detailsBT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.detailsBT.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -431,9 +431,9 @@
             this.panel1.Controls.Add(this.saveBT);
             this.panel1.Controls.Add(this.closeBT);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 348);
+            this.panel1.Location = new System.Drawing.Point(0, 370);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(397, 102);
+            this.panel1.Size = new System.Drawing.Size(397, 80);
             this.panel1.TabIndex = 15;
             // 
             // saveBT
@@ -483,7 +483,7 @@
             this.saveBT.IdleIconLeftImage = null;
             this.saveBT.IdleIconRightImage = null;
             this.saveBT.IndicateFocus = false;
-            this.saveBT.Location = new System.Drawing.Point(227, 51);
+            this.saveBT.Location = new System.Drawing.Point(235, 29);
             this.saveBT.Name = "saveBT";
             this.saveBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.saveBT.OnDisabledState.BorderRadius = 8;
@@ -573,7 +573,7 @@
             this.closeBT.IdleIconLeftImage = null;
             this.closeBT.IdleIconRightImage = null;
             this.closeBT.IndicateFocus = false;
-            this.closeBT.Location = new System.Drawing.Point(52, 51);
+            this.closeBT.Location = new System.Drawing.Point(79, 29);
             this.closeBT.Name = "closeBT";
             this.closeBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.closeBT.OnDisabledState.BorderRadius = 8;
@@ -623,9 +623,10 @@
             this.ClientSize = new System.Drawing.Size(397, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "DetailForm";
+            this.Text = "Chi tiết";
             this.Shown += new System.EventHandler(this.DetailForm_Shown);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

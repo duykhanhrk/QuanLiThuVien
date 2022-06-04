@@ -79,9 +79,9 @@
             this.panel1.Controls.Add(this.saveBT);
             this.panel1.Controls.Add(this.closeBT);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 348);
+            this.panel1.Location = new System.Drawing.Point(0, 370);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(362, 102);
+            this.panel1.Size = new System.Drawing.Size(377, 80);
             this.panel1.TabIndex = 3;
             // 
             // saveBT
@@ -89,6 +89,7 @@
             this.saveBT.AllowAnimations = true;
             this.saveBT.AllowMouseEffects = true;
             this.saveBT.AllowToggling = false;
+            this.saveBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.saveBT.AnimationSpeed = 200;
             this.saveBT.AutoGenerateColors = false;
             this.saveBT.AutoRoundBorders = false;
@@ -131,7 +132,7 @@
             this.saveBT.IdleIconLeftImage = null;
             this.saveBT.IdleIconRightImage = null;
             this.saveBT.IndicateFocus = false;
-            this.saveBT.Location = new System.Drawing.Point(200, 51);
+            this.saveBT.Location = new System.Drawing.Point(215, 29);
             this.saveBT.Name = "saveBT";
             this.saveBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.saveBT.OnDisabledState.BorderRadius = 8;
@@ -179,6 +180,7 @@
             this.closeBT.AllowAnimations = true;
             this.closeBT.AllowMouseEffects = true;
             this.closeBT.AllowToggling = false;
+            this.closeBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.closeBT.AnimationSpeed = 200;
             this.closeBT.AutoGenerateColors = false;
             this.closeBT.AutoRoundBorders = false;
@@ -221,7 +223,7 @@
             this.closeBT.IdleIconLeftImage = null;
             this.closeBT.IdleIconRightImage = null;
             this.closeBT.IndicateFocus = false;
-            this.closeBT.Location = new System.Drawing.Point(25, 51);
+            this.closeBT.Location = new System.Drawing.Point(59, 29);
             this.closeBT.Name = "closeBT";
             this.closeBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.closeBT.OnDisabledState.BorderRadius = 8;
@@ -262,6 +264,7 @@
             this.closeBT.TextMarginLeft = 0;
             this.closeBT.TextPadding = new System.Windows.Forms.Padding(0);
             this.closeBT.UseDefaultRadiusAndThickness = true;
+            this.closeBT.Click += new System.EventHandler(this.closeBT_Click);
             // 
             // panel2
             // 
@@ -282,7 +285,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(362, 348);
+            this.panel2.Size = new System.Drawing.Size(377, 370);
             this.panel2.TabIndex = 4;
             // 
             // firstNameTB
@@ -313,7 +316,7 @@
             this.firstNameTB.IconRight = null;
             this.firstNameTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.firstNameTB.Lines = new string[0];
-            this.firstNameTB.Location = new System.Drawing.Point(90, 98);
+            this.firstNameTB.Location = new System.Drawing.Point(105, 98);
             this.firstNameTB.MaxLength = 32767;
             this.firstNameTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.firstNameTB.Modified = false;
@@ -365,7 +368,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(65, 34);
+            this.label8.Location = new System.Drawing.Point(80, 34);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(19, 15);
             this.label8.TabIndex = 58;
@@ -400,7 +403,7 @@
             this.iDTB.IconRight = null;
             this.iDTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.iDTB.Lines = new string[0];
-            this.iDTB.Location = new System.Drawing.Point(90, 12);
+            this.iDTB.Location = new System.Drawing.Point(105, 12);
             this.iDTB.MaxLength = 32767;
             this.iDTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.iDTB.Modified = false;
@@ -452,7 +455,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(61, 77);
+            this.label9.Location = new System.Drawing.Point(76, 77);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(23, 15);
             this.label9.TabIndex = 60;
@@ -486,7 +489,7 @@
             this.lastNameTB.IconRight = null;
             this.lastNameTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.lastNameTB.Lines = new string[0];
-            this.lastNameTB.Location = new System.Drawing.Point(90, 55);
+            this.lastNameTB.Location = new System.Drawing.Point(105, 55);
             this.lastNameTB.MaxLength = 32767;
             this.lastNameTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.lastNameTB.Modified = false;
@@ -538,7 +541,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(56, 120);
+            this.label10.Location = new System.Drawing.Point(71, 120);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(28, 15);
             this.label10.TabIndex = 62;
@@ -549,7 +552,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(32, 158);
+            this.label11.Location = new System.Drawing.Point(47, 158);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 15);
             this.label11.TabIndex = 64;
@@ -560,7 +563,7 @@
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(25, 196);
+            this.label15.Location = new System.Drawing.Point(40, 196);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(59, 15);
             this.label15.TabIndex = 65;
@@ -571,7 +574,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(45, 239);
+            this.label16.Location = new System.Drawing.Point(60, 239);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(39, 15);
             this.label16.TabIndex = 66;
@@ -605,7 +608,7 @@
             this.addressTB.IconRight = null;
             this.addressTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.addressTB.Lines = new string[0];
-            this.addressTB.Location = new System.Drawing.Point(90, 260);
+            this.addressTB.Location = new System.Drawing.Point(105, 260);
             this.addressTB.MaxLength = 32767;
             this.addressTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.addressTB.Modified = false;
@@ -657,7 +660,7 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(39, 282);
+            this.label17.Location = new System.Drawing.Point(54, 282);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(45, 15);
             this.label17.TabIndex = 67;
@@ -691,7 +694,7 @@
             this.emailTB.IconRight = null;
             this.emailTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.emailTB.Lines = new string[0];
-            this.emailTB.Location = new System.Drawing.Point(90, 217);
+            this.emailTB.Location = new System.Drawing.Point(105, 217);
             this.emailTB.MaxLength = 32767;
             this.emailTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.emailTB.Modified = false;
@@ -773,7 +776,7 @@
             this.sexDD.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
             this.sexDD.ItemHighLightForeColor = System.Drawing.Color.White;
             this.sexDD.ItemTopMargin = 3;
-            this.sexDD.Location = new System.Drawing.Point(90, 141);
+            this.sexDD.Location = new System.Drawing.Point(105, 141);
             this.sexDD.Name = "sexDD";
             this.sexDD.Size = new System.Drawing.Size(260, 32);
             this.sexDD.TabIndex = 68;
@@ -800,7 +803,7 @@
             this.birthdayDP.IconColor = System.Drawing.Color.Gray;
             this.birthdayDP.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.birthdayDP.LeftTextMargin = 5;
-            this.birthdayDP.Location = new System.Drawing.Point(90, 179);
+            this.birthdayDP.Location = new System.Drawing.Point(105, 179);
             this.birthdayDP.MinimumSize = new System.Drawing.Size(4, 32);
             this.birthdayDP.Name = "birthdayDP";
             this.birthdayDP.Size = new System.Drawing.Size(260, 32);
@@ -811,14 +814,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(362, 450);
+            this.ClientSize = new System.Drawing.Size(377, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "DetailForm";
+            this.Text = "Chi tiết";
             this.Shown += new System.EventHandler(this.DetailForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

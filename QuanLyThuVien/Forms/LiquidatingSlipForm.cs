@@ -1,5 +1,5 @@
 ﻿using QuanLyThuVien.DataObject;
-using QuanLyThuVien.Forms.LiquidatingSlipDetailForms;
+using QuanLyThuVien.Forms.LiquidatingSlipForms;
 using QuanLyThuVien.Repository;
 using System;
 using System.Collections.Generic;
@@ -13,38 +13,31 @@ using System.Windows.Forms;
 
 namespace QuanLyThuVien.Forms
 {
-    public partial class LiquidatingSlipDetailForm : Form
+    public partial class LiquidatingSlipForm : Form
     {
-        // Control
-        private short mode = 0;
+        private LiquidatingSlipRepository repository = new LiquidatingSlipRepository();
+        private List<LiquidatingSlip> list = new List<LiquidatingSlip>();
 
-        // Object
-        private List<LiquidatingSlipDetail> _selfObject;
-        public List<LiquidatingSlipDetail> SelfObject
+        public LiquidatingSlipForm()
         {
-            get { return _selfObject; }
-        }
-
-        public LiquidatingSlipDetailForm()
-        {
-            InitializeComponent();
-        }
-
-        public LiquidatingSlipDetailForm(List<LiquidatingSlipDetail> list, short mode  = 0)
-        {
-            this.mode = mode;
-            _selfObject = list;
             InitializeComponent();
         }
 
         private void RefreshData()
         {
-            listDGV.DataSource = null;
-            listDGV.DataSource = _selfObject;
-            listDGV.Refresh();
+            try
+            {
+                list = repository.GetAll();
+                listDGV.DataSource = list;
+                listDGV.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo");
+            }
         }
 
-        private void LiquidatingSlipDetailForm_Shown(object sender, EventArgs e)
+        private void LiquidatingSlipForm_Shown(object sender, EventArgs e)
         {
             RefreshData();
         }
@@ -54,10 +47,9 @@ namespace QuanLyThuVien.Forms
             if (e.RowIndex < 0)
                 return;
 
-            LiquidatingSlipDetail liquidatingSlipDetail = (LiquidatingSlipDetail)listDGV.Rows[e.RowIndex].DataBoundItem;
+            LiquidatingSlip liquidatingSlip = (LiquidatingSlip)listDGV.Rows[e.RowIndex].DataBoundItem;
 
-            DetailForm detailForm = new DetailForm(liquidatingSlipDetail);
-
+            DetailForm detailForm = new DetailForm(liquidatingSlip);
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
 
@@ -68,15 +60,11 @@ namespace QuanLyThuVien.Forms
         private void creationBT_Click(object sender, EventArgs e)
         {
             DetailForm detailForm = new DetailForm();
-
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
 
             if (detailForm.Successed)
-            {
-                _selfObject.Add(detailForm.SelfObject);
                 RefreshData();
-            }
         }
 
         private void updateBT_Click(object sender, EventArgs e)
@@ -84,10 +72,9 @@ namespace QuanLyThuVien.Forms
             if (listDGV.SelectedRows.Count == 0)
                 return;
 
-            LiquidatingSlipDetail liquidatingSlipDetail = (LiquidatingSlipDetail)listDGV.CurrentRow.DataBoundItem;
+            LiquidatingSlip liquidatingSlip = (LiquidatingSlip)listDGV.CurrentRow.DataBoundItem;
 
-            DetailForm detailForm = new DetailForm(liquidatingSlipDetail);
-
+            DetailForm detailForm = new DetailForm(liquidatingSlip);
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
 
@@ -100,10 +87,17 @@ namespace QuanLyThuVien.Forms
             if (listDGV.SelectedRows.Count == 0)
                 return;
 
-            LiquidatingSlipDetail liquidatingSlipDetail = (LiquidatingSlipDetail)listDGV.CurrentRow.DataBoundItem;
+            LendingSlip lendingSlip = (LendingSlip)listDGV.CurrentRow.DataBoundItem;
 
-            _selfObject.Remove(liquidatingSlipDetail);
-            RefreshData();
+            try
+            {
+                repository.Delete(lendingSlip.Id);
+                RefreshData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo");
+            }
         }
 
         private void refreshBT_Click(object sender, EventArgs e)

@@ -13,7 +13,7 @@ namespace QuanLyThuVien.Repository
     {
         public List<LiquidatingSlipDetail> GetAllOfLiquidatingSlip(long liquidatingSlipId)
         {
-            string commandText = "SELECT * FROM LendingSlipDetail WHERE LendingSlipId = @lending_slip_id";
+            string commandText = $"SELECT * FROM {tableName} WHERE LiquidatingSlipId = @liquidating_slip_id";
             SqlParameter parameterLiquidatingSlipId = new SqlParameter("@liquidating_slip_id", liquidatingSlipId);
 
             return Get(commandText, parameterLiquidatingSlipId);

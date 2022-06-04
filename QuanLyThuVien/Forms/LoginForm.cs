@@ -15,12 +15,14 @@ namespace QuanLyThuVien.Forms
     {
         private Repository.AuthRepository authRepository = new Repository.AuthRepository();
 
+        // Logged
         private bool _logged = false;
         public bool Logged
         {
             get { return _logged; }
         }
 
+        // Librarian
         private Librarian _librarian;
         public Librarian Librarian
         {
@@ -35,9 +37,10 @@ namespace QuanLyThuVien.Forms
 
         private void loginBT_Click(object sender, EventArgs e)
         {
+            // Dev
             if (iDTB.Text == "" || passwordTB.Text == "")
             {
-                iDTB.Text = "LB00000014";
+                iDTB.Text = "LB00000011";
                 passwordTB.Text = "12";
             }
 

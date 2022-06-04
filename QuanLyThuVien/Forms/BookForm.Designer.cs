@@ -113,7 +113,7 @@
             this.refreshBT.IdleIconLeftImage = null;
             this.refreshBT.IdleIconRightImage = null;
             this.refreshBT.IndicateFocus = false;
-            this.refreshBT.Location = new System.Drawing.Point(480, 10);
+            this.refreshBT.Location = new System.Drawing.Point(480, 12);
             this.refreshBT.Name = "refreshBT";
             this.refreshBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.refreshBT.OnDisabledState.BorderRadius = 8;

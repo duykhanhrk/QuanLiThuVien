@@ -46,6 +46,9 @@ namespace QuanLyThuVien.Lib
                     cmd.CommandType = commandType;
                     cmd.Parameters.AddRange(parameters);
 
+                    // Debug
+                    Debug.WriteLine(cmd.CommandText);
+
                     try
                     {
                         conn.Open();
@@ -96,6 +99,9 @@ namespace QuanLyThuVien.Lib
                 {
                     cmd.CommandType = commandType;
                     cmd.Parameters.AddRange(parameters);
+
+                    // Debug
+                    Debug.WriteLine(cmd.CommandText);
 
                     try
                     {
@@ -148,6 +154,9 @@ namespace QuanLyThuVien.Lib
             {
                 cmd.CommandType = commandType;
                 cmd.Parameters.AddRange(parameters);
+
+                // Debug
+                Debug.WriteLine(cmd.CommandText);
 
                 try
                 {

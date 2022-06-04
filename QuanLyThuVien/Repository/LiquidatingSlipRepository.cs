@@ -70,7 +70,7 @@ namespace QuanLyThuVien.Repository
             string detailsString = "";
             foreach (LiquidatingSlipDetail ld in obj.LiquidatingSlipDetails)
             {
-                detailsString += $"('{ld.BookId}', @liquidating_slip_id, '{ld.Price}', '{ld.Notes}'), ";
+                detailsString += $"('{ld.BookId}', '{ld.LiquidatingSlipId}', '{ld.Price}', '{ld.Notes}'), ";
             }
 
             if (detailsString.Length > 0)

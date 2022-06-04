@@ -100,5 +100,10 @@ namespace QuanLyThuVien.Forms
         {
             SetContentForm(typeof(LibraryCardForm));
         }
+
+        private void liquidatingSlipBT_Click(object sender, EventArgs e)
+        {
+            SetContentForm(typeof(LiquidatingSlipForm));
+        }
     }
 }

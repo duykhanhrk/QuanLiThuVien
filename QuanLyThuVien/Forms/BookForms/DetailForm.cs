@@ -174,5 +174,10 @@ namespace QuanLyThuVien.Forms.BookForms
         {
             SaveData();
         }
+
+        private void closeBT_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

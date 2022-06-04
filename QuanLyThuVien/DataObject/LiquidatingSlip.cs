@@ -34,5 +34,9 @@ namespace QuanLyThuVien.DataObject
 
         public List<LiquidatingSlipDetail> LiquidatingSlipDetails { get; set; }
 
+        public LiquidatingSlip()
+        {
+            LiquidatingSlipDetails = new List<LiquidatingSlipDetail>();
+        }
     }
 }

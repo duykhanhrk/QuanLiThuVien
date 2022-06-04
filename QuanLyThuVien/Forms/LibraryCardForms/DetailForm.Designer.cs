@@ -80,7 +80,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(413, 348);
+            this.panel2.Size = new System.Drawing.Size(413, 370);
             this.panel2.TabIndex = 12;
             // 
             // feeTB
@@ -160,6 +160,7 @@
             // 
             // effectiveEndDateDP
             // 
+            this.effectiveEndDateDP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.effectiveEndDateDP.BackColor = System.Drawing.Color.Transparent;
             this.effectiveEndDateDP.BorderRadius = 1;
             this.effectiveEndDateDP.Color = System.Drawing.Color.Silver;
@@ -186,6 +187,7 @@
             // 
             // effectiveDateDP
             // 
+            this.effectiveDateDP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.effectiveDateDP.BackColor = System.Drawing.Color.Transparent;
             this.effectiveDateDP.BorderRadius = 1;
             this.effectiveDateDP.Color = System.Drawing.Color.Silver;
@@ -225,6 +227,7 @@
             // 
             this.notesTB.AcceptsReturn = false;
             this.notesTB.AcceptsTab = false;
+            this.notesTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.notesTB.AnimationSpeed = 200;
             this.notesTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.notesTB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -473,6 +476,7 @@
             this.closeBT.AllowAnimations = true;
             this.closeBT.AllowMouseEffects = true;
             this.closeBT.AllowToggling = false;
+            this.closeBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.closeBT.AnimationSpeed = 200;
             this.closeBT.AutoGenerateColors = false;
             this.closeBT.AutoRoundBorders = false;
@@ -515,7 +519,7 @@
             this.closeBT.IdleIconLeftImage = null;
             this.closeBT.IdleIconRightImage = null;
             this.closeBT.IndicateFocus = false;
-            this.closeBT.Location = new System.Drawing.Point(52, 51);
+            this.closeBT.Location = new System.Drawing.Point(95, 29);
             this.closeBT.Name = "closeBT";
             this.closeBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.closeBT.OnDisabledState.BorderRadius = 8;
@@ -556,6 +560,7 @@
             this.closeBT.TextMarginLeft = 0;
             this.closeBT.TextPadding = new System.Windows.Forms.Padding(0);
             this.closeBT.UseDefaultRadiusAndThickness = true;
+            this.closeBT.Click += new System.EventHandler(this.closeBT_Click);
             // 
             // panel1
             // 
@@ -563,9 +568,9 @@
             this.panel1.Controls.Add(this.saveBT);
             this.panel1.Controls.Add(this.closeBT);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 348);
+            this.panel1.Location = new System.Drawing.Point(0, 370);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(413, 102);
+            this.panel1.Size = new System.Drawing.Size(413, 80);
             this.panel1.TabIndex = 11;
             // 
             // saveBT
@@ -573,6 +578,7 @@
             this.saveBT.AllowAnimations = true;
             this.saveBT.AllowMouseEffects = true;
             this.saveBT.AllowToggling = false;
+            this.saveBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.saveBT.AnimationSpeed = 200;
             this.saveBT.AutoGenerateColors = false;
             this.saveBT.AutoRoundBorders = false;
@@ -615,7 +621,7 @@
             this.saveBT.IdleIconLeftImage = null;
             this.saveBT.IdleIconRightImage = null;
             this.saveBT.IndicateFocus = false;
-            this.saveBT.Location = new System.Drawing.Point(227, 51);
+            this.saveBT.Location = new System.Drawing.Point(251, 29);
             this.saveBT.Name = "saveBT";
             this.saveBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.saveBT.OnDisabledState.BorderRadius = 8;
@@ -666,9 +672,10 @@
             this.ClientSize = new System.Drawing.Size(413, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "DetailForm";
+            this.Text = "Chi tiết";
             this.Shown += new System.EventHandler(this.DetailForm_Shown);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

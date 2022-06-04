@@ -1,6 +1,6 @@
 ﻿namespace QuanLyThuVien.Forms
 {
-    partial class LiquidatingSlipForms
+    partial class LiquidatingSlipForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiquidatingSlipForms));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiquidatingSlipForm));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -141,6 +141,7 @@
             this.creationBT.TextMarginLeft = 0;
             this.creationBT.TextPadding = new System.Windows.Forms.Padding(0);
             this.creationBT.UseDefaultRadiusAndThickness = true;
+            this.creationBT.Click += new System.EventHandler(this.creationBT_Click);
             // 
             // updateBT
             // 
@@ -230,6 +231,7 @@
             this.updateBT.TextMarginLeft = 0;
             this.updateBT.TextPadding = new System.Windows.Forms.Padding(0);
             this.updateBT.UseDefaultRadiusAndThickness = true;
+            this.updateBT.Click += new System.EventHandler(this.updateBT_Click);
             // 
             // deleteBT
             // 
@@ -319,6 +321,7 @@
             this.deleteBT.TextMarginLeft = 0;
             this.deleteBT.TextPadding = new System.Windows.Forms.Padding(0);
             this.deleteBT.UseDefaultRadiusAndThickness = true;
+            this.deleteBT.Click += new System.EventHandler(this.deleteBT_Click);
             // 
             // searchTB
             // 
@@ -442,7 +445,7 @@
             this.refreshBT.IdleIconLeftImage = null;
             this.refreshBT.IdleIconRightImage = null;
             this.refreshBT.IndicateFocus = false;
-            this.refreshBT.Location = new System.Drawing.Point(480, 10);
+            this.refreshBT.Location = new System.Drawing.Point(480, 12);
             this.refreshBT.Name = "refreshBT";
             this.refreshBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.refreshBT.OnDisabledState.BorderRadius = 8;
@@ -483,6 +486,7 @@
             this.refreshBT.TextMarginLeft = 0;
             this.refreshBT.TextPadding = new System.Windows.Forms.Padding(0);
             this.refreshBT.UseDefaultRadiusAndThickness = true;
+            this.refreshBT.Click += new System.EventHandler(this.refreshBT_Click);
             // 
             // panel1
             // 
@@ -574,16 +578,18 @@
             this.listDGV.Size = new System.Drawing.Size(1151, 468);
             this.listDGV.TabIndex = 2;
             this.listDGV.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Navy;
+            this.listDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listDGV_CellDoubleClick);
             // 
-            // LiquidatingSlipForms
+            // LiquidatingSlipForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 557);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "LiquidatingSlipForms";
+            this.Name = "LiquidatingSlipForm";
             this.Text = "LiquidatingSlipForms";
+            this.Shown += new System.EventHandler(this.LiquidatingSlipForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listDGV)).EndInit();

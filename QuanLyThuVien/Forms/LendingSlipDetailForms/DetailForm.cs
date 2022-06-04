@@ -32,7 +32,6 @@ namespace QuanLyThuVien.Forms.LendingSlipDetailForms
         }
 
         // Repository
-        private LendingSlipDetailRepository repository = new LendingSlipDetailRepository();
         private BookRepository bookRepository = new BookRepository();
 
         public DetailForm()
@@ -44,6 +43,7 @@ namespace QuanLyThuVien.Forms.LendingSlipDetailForms
         {
             this.mode = mode;
             _selfObject = lendingSlipDetail;
+            InitializeComponent();
         }
 
         private void PrepareInterface()

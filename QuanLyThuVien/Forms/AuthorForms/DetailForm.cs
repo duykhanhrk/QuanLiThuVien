@@ -3,12 +3,6 @@ using QuanLyThuVien.Lib;
 using QuanLyThuVien.Repository;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyThuVien.Forms.AuthorForms
@@ -123,6 +117,11 @@ namespace QuanLyThuVien.Forms.AuthorForms
         private void saveBT_Click(object sender, EventArgs e)
         {
             SaveData();
+        }
+
+        private void closeBT_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -647,7 +647,7 @@
             this.saveBT.IdleIconLeftImage = null;
             this.saveBT.IdleIconRightImage = null;
             this.saveBT.IndicateFocus = false;
-            this.saveBT.Location = new System.Drawing.Point(227, 51);
+            this.saveBT.Location = new System.Drawing.Point(227, 29);
             this.saveBT.Name = "saveBT";
             this.saveBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.saveBT.OnDisabledState.BorderRadius = 8;
@@ -696,9 +696,9 @@
             this.panel1.Controls.Add(this.saveBT);
             this.panel1.Controls.Add(this.closeBT);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 408);
+            this.panel1.Location = new System.Drawing.Point(0, 430);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(389, 102);
+            this.panel1.Size = new System.Drawing.Size(389, 80);
             this.panel1.TabIndex = 5;
             // 
             // closeBT
@@ -748,7 +748,7 @@
             this.closeBT.IdleIconLeftImage = null;
             this.closeBT.IdleIconRightImage = null;
             this.closeBT.IndicateFocus = false;
-            this.closeBT.Location = new System.Drawing.Point(52, 51);
+            this.closeBT.Location = new System.Drawing.Point(71, 29);
             this.closeBT.Name = "closeBT";
             this.closeBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.closeBT.OnDisabledState.BorderRadius = 8;
@@ -789,6 +789,7 @@
             this.closeBT.TextMarginLeft = 0;
             this.closeBT.TextPadding = new System.Windows.Forms.Padding(0);
             this.closeBT.UseDefaultRadiusAndThickness = true;
+            this.closeBT.Click += new System.EventHandler(this.closeBT_Click);
             // 
             // panel2
             // 
@@ -908,9 +909,10 @@
             this.ClientSize = new System.Drawing.Size(389, 510);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "DetailForm";
+            this.Text = "Chi tiết";
             this.Shown += new System.EventHandler(this.DetailForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

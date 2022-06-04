@@ -170,6 +170,7 @@
     <Compile Include="DataObject\BookCategory.cs" />
     <Compile Include="DataObject\BookTitle.cs" />
     <Compile Include="DataObject\Case.cs" />
+    <Compile Include="DataObject\SGrant.cs" />
     <Compile Include="DataObject\LendingSlip.cs" />
     <Compile Include="DataObject\LendingSlipDetail.cs" />
     <Compile Include="DataObject\Librarian.cs" />
@@ -178,6 +179,8 @@
     <Compile Include="DataObject\LiquidatingSlipDetail.cs" />
     <Compile Include="DataObject\Publisher.cs" />
     <Compile Include="DataObject\Reader.cs" />
+    <Compile Include="DataObject\SLogin.cs" />
+    <Compile Include="DataObject\SRole.cs" />
     <Compile Include="Forms\AuthorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,11 +277,11 @@
     <Compile Include="Forms\LiquidatingSlipDetailForms\DetailForm.Designer.cs">
       <DependentUpon>DetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LiquidatingSlipForms.cs">
+    <Compile Include="Forms\LiquidatingSlipForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LiquidatingSlipForms.Designer.cs">
-      <DependentUpon>LiquidatingSlipForms.cs</DependentUpon>
+    <Compile Include="Forms\LiquidatingSlipForm.Designer.cs">
+      <DependentUpon>LiquidatingSlipForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LiquidatingSlipForms\DetailForm.cs">
       <SubType>Form</SubType>
@@ -322,6 +325,18 @@
     <Compile Include="Forms\SimulationForm.Designer.cs">
       <DependentUpon>SimulationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SimulationForms\LoginDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SimulationForms\LoginDetailForm.Designer.cs">
+      <DependentUpon>LoginDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SimulationForms\RoleDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SimulationForms\RoleDetailForm.Designer.cs">
+      <DependentUpon>RoleDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lib\Archive.cs" />
     <Compile Include="Lib\CheckedListBoxExtensions.cs" />
     <Compile Include="Lib\ComboBoxExtensions.cs" />
@@ -331,12 +346,14 @@
     <Compile Include="Lib\LazyMagic.cs" />
     <Compile Include="Lib\PasswordSecurity.cs" />
     <Compile Include="Lib\RepositoryAction.cs" />
+    <Compile Include="Lib\SqlCommandBuilder.cs" />
     <Compile Include="Lib\StringExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AccountRepository.cs" />
     <Compile Include="Repository\AuthorRepository.cs" />
     <Compile Include="Repository\AuthRepository.cs" />
+    <Compile Include="Repository\BackupRestoreRepository.cs" />
     <Compile Include="Repository\BookCaseRepository.cs" />
     <Compile Include="Repository\BookCategoryRepository.cs" />
     <Compile Include="Lib\CommonTask.cs" />
@@ -351,6 +368,7 @@
     <Compile Include="Repository\LiquidatingSlipRepository.cs" />
     <Compile Include="Repository\PublisherRepository.cs" />
     <Compile Include="Repository\ReaderRepository.cs" />
+    <Compile Include="Repository\SGantRepository.cs" />
     <Compile Include="Repository\SLoginRepository.cs" />
     <Compile Include="Repository\SRoleRepository.cs" />
     <EmbeddedResource Include="Forms\AuthorForm.resx">
@@ -395,8 +413,17 @@
     <EmbeddedResource Include="Forms\LibraryCardForms\DetailForm.resx">
       <DependentUpon>DetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LiquidatingSlipForms.resx">
-      <DependentUpon>LiquidatingSlipForms.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\LiquidatingSlipDetailForm.resx">
+      <DependentUpon>LiquidatingSlipDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LiquidatingSlipDetailForms\DetailForm.resx">
+      <DependentUpon>DetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LiquidatingSlipForm.resx">
+      <DependentUpon>LiquidatingSlipForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LiquidatingSlipForms\DetailForm.resx">
+      <DependentUpon>DetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -415,6 +442,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SimulationForm.resx">
       <DependentUpon>SimulationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SimulationForms\LoginDetailForm.resx">
+      <DependentUpon>LoginDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SimulationForms\RoleDetailForm.resx">
+      <DependentUpon>RoleDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

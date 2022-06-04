@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailForm));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel2 = new System.Windows.Forms.Panel();
             this.extendedTB = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.tookBackBT = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -66,7 +66,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(404, 317);
+            this.panel2.Size = new System.Drawing.Size(365, 339);
             this.panel2.TabIndex = 12;
             // 
             // extendedTB
@@ -74,6 +74,7 @@
             this.extendedTB.AllowAnimations = true;
             this.extendedTB.AllowMouseEffects = true;
             this.extendedTB.AllowToggling = false;
+            this.extendedTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.extendedTB.AnimationSpeed = 200;
             this.extendedTB.AutoGenerateColors = false;
             this.extendedTB.AutoRoundBorders = false;
@@ -88,11 +89,11 @@
             this.extendedTB.ColorContrastOnClick = 45;
             this.extendedTB.ColorContrastOnHover = 45;
             this.extendedTB.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.extendedTB.CustomizableEdges = borderEdges1;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.extendedTB.CustomizableEdges = borderEdges5;
             this.extendedTB.DialogResult = System.Windows.Forms.DialogResult.None;
             this.extendedTB.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.extendedTB.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -116,7 +117,7 @@
             this.extendedTB.IdleIconLeftImage = null;
             this.extendedTB.IdleIconRightImage = null;
             this.extendedTB.IndicateFocus = false;
-            this.extendedTB.Location = new System.Drawing.Point(242, 193);
+            this.extendedTB.Location = new System.Drawing.Point(233, 136);
             this.extendedTB.Name = "extendedTB";
             this.extendedTB.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.extendedTB.OnDisabledState.BorderRadius = 8;
@@ -150,7 +151,7 @@
             this.extendedTB.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.extendedTB.OnPressedState.IconLeftImage = null;
             this.extendedTB.OnPressedState.IconRightImage = null;
-            this.extendedTB.Size = new System.Drawing.Size(150, 39);
+            this.extendedTB.Size = new System.Drawing.Size(120, 35);
             this.extendedTB.TabIndex = 83;
             this.extendedTB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.extendedTB.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -163,6 +164,7 @@
             this.tookBackBT.AllowAnimations = true;
             this.tookBackBT.AllowMouseEffects = true;
             this.tookBackBT.AllowToggling = false;
+            this.tookBackBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tookBackBT.AnimationSpeed = 200;
             this.tookBackBT.AutoGenerateColors = false;
             this.tookBackBT.AutoRoundBorders = false;
@@ -177,11 +179,11 @@
             this.tookBackBT.ColorContrastOnClick = 45;
             this.tookBackBT.ColorContrastOnHover = 45;
             this.tookBackBT.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.tookBackBT.CustomizableEdges = borderEdges2;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.tookBackBT.CustomizableEdges = borderEdges6;
             this.tookBackBT.DialogResult = System.Windows.Forms.DialogResult.None;
             this.tookBackBT.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.tookBackBT.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -205,7 +207,7 @@
             this.tookBackBT.IdleIconLeftImage = null;
             this.tookBackBT.IdleIconRightImage = null;
             this.tookBackBT.IndicateFocus = false;
-            this.tookBackBT.Location = new System.Drawing.Point(242, 148);
+            this.tookBackBT.Location = new System.Drawing.Point(233, 177);
             this.tookBackBT.Name = "tookBackBT";
             this.tookBackBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.tookBackBT.OnDisabledState.BorderRadius = 8;
@@ -239,7 +241,7 @@
             this.tookBackBT.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.tookBackBT.OnPressedState.IconLeftImage = null;
             this.tookBackBT.OnPressedState.IconRightImage = null;
-            this.tookBackBT.Size = new System.Drawing.Size(150, 39);
+            this.tookBackBT.Size = new System.Drawing.Size(120, 35);
             this.tookBackBT.TabIndex = 82;
             this.tookBackBT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.tookBackBT.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -249,8 +251,9 @@
             // 
             // dueBackDP
             // 
+            this.dueBackDP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dueBackDP.BackColor = System.Drawing.Color.Transparent;
-            this.dueBackDP.BorderRadius = 1;
+            this.dueBackDP.BorderRadius = 8;
             this.dueBackDP.Color = System.Drawing.Color.Silver;
             this.dueBackDP.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
             this.dueBackDP.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
@@ -265,7 +268,7 @@
             this.dueBackDP.IconColor = System.Drawing.Color.Gray;
             this.dueBackDP.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dueBackDP.LeftTextMargin = 5;
-            this.dueBackDP.Location = new System.Drawing.Point(132, 55);
+            this.dueBackDP.Location = new System.Drawing.Point(93, 55);
             this.dueBackDP.MinimumSize = new System.Drawing.Size(4, 32);
             this.dueBackDP.Name = "dueBackDP";
             this.dueBackDP.Size = new System.Drawing.Size(260, 32);
@@ -275,6 +278,7 @@
             // 
             this.notesTB.AcceptsReturn = false;
             this.notesTB.AcceptsTab = false;
+            this.notesTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.notesTB.AnimationSpeed = 200;
             this.notesTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.notesTB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -284,7 +288,7 @@
             this.notesTB.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.notesTB.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.notesTB.BorderColorIdle = System.Drawing.Color.Silver;
-            this.notesTB.BorderRadius = 1;
+            this.notesTB.BorderRadius = 8;
             this.notesTB.BorderThickness = 1;
             this.notesTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.notesTB.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -298,32 +302,32 @@
             this.notesTB.IconRight = null;
             this.notesTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.notesTB.Lines = new string[0];
-            this.notesTB.Location = new System.Drawing.Point(132, 93);
+            this.notesTB.Location = new System.Drawing.Point(93, 93);
             this.notesTB.MaxLength = 32767;
             this.notesTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.notesTB.Modified = false;
             this.notesTB.Multiline = false;
             this.notesTB.Name = "notesTB";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.notesTB.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.notesTB.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.notesTB.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.notesTB.OnIdleState = stateProperties4;
+            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.notesTB.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.notesTB.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.notesTB.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.notesTB.OnIdleState = stateProperties8;
             this.notesTB.Padding = new System.Windows.Forms.Padding(3);
             this.notesTB.PasswordChar = '\0';
             this.notesTB.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -350,7 +354,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(77, 110);
+            this.label3.Location = new System.Drawing.Point(38, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 15);
             this.label3.TabIndex = 79;
@@ -361,7 +365,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(71, 72);
+            this.label2.Location = new System.Drawing.Point(32, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 15);
             this.label2.TabIndex = 77;
@@ -373,7 +377,7 @@
             this.bookDD.BackColor = System.Drawing.Color.Transparent;
             this.bookDD.BackgroundColor = System.Drawing.Color.White;
             this.bookDD.BorderColor = System.Drawing.Color.Silver;
-            this.bookDD.BorderRadius = 1;
+            this.bookDD.BorderRadius = 8;
             this.bookDD.Color = System.Drawing.Color.Silver;
             this.bookDD.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
             this.bookDD.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -402,7 +406,7 @@
             this.bookDD.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bookDD.ItemHighLightForeColor = System.Drawing.Color.White;
             this.bookDD.ItemTopMargin = 3;
-            this.bookDD.Location = new System.Drawing.Point(132, 12);
+            this.bookDD.Location = new System.Drawing.Point(93, 12);
             this.bookDD.Name = "bookDD";
             this.bookDD.Size = new System.Drawing.Size(260, 32);
             this.bookDD.TabIndex = 71;
@@ -415,7 +419,7 @@
             this.nameLB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nameLB.AutoSize = true;
             this.nameLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLB.Location = new System.Drawing.Point(62, 29);
+            this.nameLB.Location = new System.Drawing.Point(23, 29);
             this.nameLB.Name = "nameLB";
             this.nameLB.Size = new System.Drawing.Size(54, 15);
             this.nameLB.TabIndex = 60;
@@ -426,6 +430,7 @@
             this.closeBT.AllowAnimations = true;
             this.closeBT.AllowMouseEffects = true;
             this.closeBT.AllowToggling = false;
+            this.closeBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.closeBT.AnimationSpeed = 200;
             this.closeBT.AutoGenerateColors = false;
             this.closeBT.AutoRoundBorders = false;
@@ -440,11 +445,11 @@
             this.closeBT.ColorContrastOnClick = 45;
             this.closeBT.ColorContrastOnHover = 45;
             this.closeBT.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.closeBT.CustomizableEdges = borderEdges3;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.closeBT.CustomizableEdges = borderEdges7;
             this.closeBT.DialogResult = System.Windows.Forms.DialogResult.None;
             this.closeBT.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.closeBT.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -468,7 +473,7 @@
             this.closeBT.IdleIconLeftImage = null;
             this.closeBT.IdleIconRightImage = null;
             this.closeBT.IndicateFocus = false;
-            this.closeBT.Location = new System.Drawing.Point(52, 51);
+            this.closeBT.Location = new System.Drawing.Point(47, 29);
             this.closeBT.Name = "closeBT";
             this.closeBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.closeBT.OnDisabledState.BorderRadius = 8;
@@ -516,9 +521,9 @@
             this.panel1.Controls.Add(this.saveBT);
             this.panel1.Controls.Add(this.closeBT);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 317);
+            this.panel1.Location = new System.Drawing.Point(0, 339);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(404, 102);
+            this.panel1.Size = new System.Drawing.Size(365, 80);
             this.panel1.TabIndex = 11;
             // 
             // saveBT
@@ -526,6 +531,7 @@
             this.saveBT.AllowAnimations = true;
             this.saveBT.AllowMouseEffects = true;
             this.saveBT.AllowToggling = false;
+            this.saveBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.saveBT.AnimationSpeed = 200;
             this.saveBT.AutoGenerateColors = false;
             this.saveBT.AutoRoundBorders = false;
@@ -540,11 +546,11 @@
             this.saveBT.ColorContrastOnClick = 45;
             this.saveBT.ColorContrastOnHover = 45;
             this.saveBT.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.saveBT.CustomizableEdges = borderEdges4;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.saveBT.CustomizableEdges = borderEdges8;
             this.saveBT.DialogResult = System.Windows.Forms.DialogResult.None;
             this.saveBT.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.saveBT.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -568,7 +574,7 @@
             this.saveBT.IdleIconLeftImage = null;
             this.saveBT.IdleIconRightImage = null;
             this.saveBT.IndicateFocus = false;
-            this.saveBT.Location = new System.Drawing.Point(227, 51);
+            this.saveBT.Location = new System.Drawing.Point(203, 29);
             this.saveBT.Name = "saveBT";
             this.saveBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.saveBT.OnDisabledState.BorderRadius = 8;
@@ -616,12 +622,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(404, 419);
+            this.ClientSize = new System.Drawing.Size(365, 419);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "DetailForm";
+            this.Text = "Chi tiết";
             this.Shown += new System.EventHandler(this.DetailForm_Shown);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

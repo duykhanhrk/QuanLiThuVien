@@ -78,15 +78,12 @@ namespace QuanLyThuVien.Forms.LibrarianFroms
             // Only mode 0
             if (mode == 0)
             {
-                changePasswordCB.Visible = false;
-                changePasswordLB.Visible = false;
                 return;
             }
 
             // Only mode 1
             if (mode == 1)
             {
-                changePasswordCB.Checked = false;
                 return;
             }
 
@@ -97,7 +94,7 @@ namespace QuanLyThuVien.Forms.LibrarianFroms
                 LazyMagic.SetPropertyOfControlsFromForm(this, "Enabled", false,
                     "lastNameTB", "firstNameTB", "sexDD", "birthdayDP", "emailTB",
                     "addressTB", "saveBT", "usernameTB", "passwordTB", "passwordCfTB",
-                    "enableCB", "changePasswordCB");
+                    "enableCB");
             }
         }
 
@@ -155,10 +152,7 @@ namespace QuanLyThuVien.Forms.LibrarianFroms
                 }
                 else
                 {
-                    if (changePasswordCB.Checked)
-                        repository.UpdateIncludeAccount(librarian, account);
-                    else
-                        repository.Update(librarian);
+                    repository.Update(librarian);
                 }
 
                 _successed = true;
