@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleDetailForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableDGV = new System.Windows.Forms.DataGridView();
             this.nameTB = new System.Windows.Forms.TextBox();
@@ -121,9 +122,10 @@
             this.ClientSize = new System.Drawing.Size(799, 531);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RoleDetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "RoleDetailForm";
+            this.Text = "Chi tiết";
             this.Shown += new System.EventHandler(this.RoleDetailForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

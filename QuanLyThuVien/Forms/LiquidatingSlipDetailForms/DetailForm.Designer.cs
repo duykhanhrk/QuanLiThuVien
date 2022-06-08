@@ -33,17 +33,11 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.priceTB = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.notesTB = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.bookDD = new Bunifu.UI.WinForms.BunifuDropdown();
             this.nameLB = new System.Windows.Forms.Label();
             this.closeBT = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -57,8 +51,6 @@
             // 
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.priceTB);
-            this.panel2.Controls.Add(this.notesTB);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.bookDD);
             this.panel2.Controls.Add(this.nameLB);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -92,7 +84,7 @@
             this.priceTB.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.priceTB.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.priceTB.BorderColorIdle = System.Drawing.Color.Silver;
-            this.priceTB.BorderRadius = 1;
+            this.priceTB.BorderRadius = 8;
             this.priceTB.BorderThickness = 1;
             this.priceTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.priceTB.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -153,99 +145,13 @@
             this.priceTB.UseSystemPasswordChar = false;
             this.priceTB.WordWrap = true;
             // 
-            // notesTB
-            // 
-            this.notesTB.AcceptsReturn = false;
-            this.notesTB.AcceptsTab = false;
-            this.notesTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.notesTB.AnimationSpeed = 200;
-            this.notesTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.notesTB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.notesTB.BackColor = System.Drawing.Color.Transparent;
-            this.notesTB.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("notesTB.BackgroundImage")));
-            this.notesTB.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.notesTB.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.notesTB.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.notesTB.BorderColorIdle = System.Drawing.Color.Silver;
-            this.notesTB.BorderRadius = 1;
-            this.notesTB.BorderThickness = 1;
-            this.notesTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.notesTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.notesTB.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.notesTB.DefaultText = "";
-            this.notesTB.FillColor = System.Drawing.Color.White;
-            this.notesTB.HideSelection = true;
-            this.notesTB.IconLeft = null;
-            this.notesTB.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.notesTB.IconPadding = 10;
-            this.notesTB.IconRight = null;
-            this.notesTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.notesTB.Lines = new string[0];
-            this.notesTB.Location = new System.Drawing.Point(103, 93);
-            this.notesTB.MaxLength = 32767;
-            this.notesTB.MinimumSize = new System.Drawing.Size(1, 1);
-            this.notesTB.Modified = false;
-            this.notesTB.Multiline = false;
-            this.notesTB.Name = "notesTB";
-            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.notesTB.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.notesTB.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.notesTB.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.notesTB.OnIdleState = stateProperties8;
-            this.notesTB.Padding = new System.Windows.Forms.Padding(3);
-            this.notesTB.PasswordChar = '\0';
-            this.notesTB.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.notesTB.PlaceholderText = "Enter text";
-            this.notesTB.ReadOnly = false;
-            this.notesTB.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.notesTB.SelectedText = "";
-            this.notesTB.SelectionLength = 0;
-            this.notesTB.SelectionStart = 0;
-            this.notesTB.ShortcutsEnabled = true;
-            this.notesTB.Size = new System.Drawing.Size(260, 37);
-            this.notesTB.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.notesTB.TabIndex = 80;
-            this.notesTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.notesTB.TextMarginBottom = 0;
-            this.notesTB.TextMarginLeft = 3;
-            this.notesTB.TextMarginTop = 0;
-            this.notesTB.TextPlaceholder = "Enter text";
-            this.notesTB.UseSystemPasswordChar = false;
-            this.notesTB.WordWrap = true;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(48, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 15);
-            this.label3.TabIndex = 79;
-            this.label3.Text = "Ghi chú";
-            // 
             // bookDD
             // 
             this.bookDD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bookDD.BackColor = System.Drawing.Color.Transparent;
             this.bookDD.BackgroundColor = System.Drawing.Color.White;
             this.bookDD.BorderColor = System.Drawing.Color.Silver;
-            this.bookDD.BorderRadius = 1;
+            this.bookDD.BorderRadius = 8;
             this.bookDD.Color = System.Drawing.Color.Silver;
             this.bookDD.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
             this.bookDD.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -509,8 +415,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.UI.WinForms.BunifuTextBox notesTB;
-        private System.Windows.Forms.Label label3;
         private Bunifu.UI.WinForms.BunifuDropdown bookDD;
         private System.Windows.Forms.Label nameLB;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton closeBT;

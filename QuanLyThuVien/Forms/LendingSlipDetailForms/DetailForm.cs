@@ -63,7 +63,6 @@ namespace QuanLyThuVien.Forms.LendingSlipDetailForms
             }
 
             bookDD.Enabled = false;
-            notesTB.Enabled = false;
             dueBackDP.Enabled = false;
             saveBT.Enabled = false;
 
@@ -87,7 +86,7 @@ namespace QuanLyThuVien.Forms.LendingSlipDetailForms
             try
             {
                 // Book cases
-                books = bookRepository.GetAllBy("Lending", false);
+                books = bookRepository.GetAllBy("Lending".PairWith(false), "Status".PairWith(1));
                 bookDD.QuickBuild(books, "Id", "Id");
             }
             catch (Exception ex)

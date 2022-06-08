@@ -104,9 +104,6 @@ namespace QuanLyThuVien.Lib
             else
                 reader = DbConnection.ExecuteReader($"SELECT * FROM {tableName}", CommandType.Text);
 
-            if (!reader.HasRows)
-                throw new Exception($"Không tìm thấy đối tượng được yêu cầu");
-
             List<T> list = new List<T>();
             DataAdapter.Fill(reader, list);
 

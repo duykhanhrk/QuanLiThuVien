@@ -65,13 +65,14 @@ namespace QuanLyThuVien.Forms.LiquidatingSlipDetailForms
             try
             {
                 // Book cases
-                books = bookRepository.GetAll();
+                books = bookRepository.GetAllBy("Status".PairWith(1), "Lending".PairWith(false));
                 bookDD.QuickBuild(books, "Id", "Id");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Thông báo");
                 Close();
+                return;
             }
 
             if (creationMode)
@@ -96,7 +97,6 @@ namespace QuanLyThuVien.Forms.LiquidatingSlipDetailForms
 
             try
             {
-                _selfObject.Notes = notesTB.Text;
                 _selfObject.BookId = (bookDD.SelectedItem as Book).Id;
                 _selfObject.Price = Decimal.Parse(priceTB.Text);
                 _successed = true;

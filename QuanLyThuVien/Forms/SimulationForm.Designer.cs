@@ -48,12 +48,12 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.restoreBT = new System.Windows.Forms.Button();
             this.fullRSBT = new System.Windows.Forms.Button();
             this.diffRSBT = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.fullBKBT = new System.Windows.Forms.Button();
             this.diffBKBT = new System.Windows.Forms.Button();
-            this.restoreBT = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -95,6 +95,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.rolesDGV);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 56);
@@ -181,6 +182,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.loginsDGV);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 56);
@@ -265,6 +267,7 @@
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.groupBox2);
             this.panel5.Controls.Add(this.groupBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -287,6 +290,17 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Restore";
+            // 
+            // restoreBT
+            // 
+            this.restoreBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.restoreBT.Location = new System.Drawing.Point(1049, 41);
+            this.restoreBT.Name = "restoreBT";
+            this.restoreBT.Size = new System.Drawing.Size(75, 23);
+            this.restoreBT.TabIndex = 2;
+            this.restoreBT.Text = "Restore";
+            this.restoreBT.UseVisualStyleBackColor = true;
+            this.restoreBT.Click += new System.EventHandler(this.restoreBT_Click);
             // 
             // fullRSBT
             // 
@@ -340,17 +354,6 @@
             this.diffBKBT.Text = "Differential";
             this.diffBKBT.UseVisualStyleBackColor = true;
             this.diffBKBT.Click += new System.EventHandler(this.diffBKBT_Click);
-            // 
-            // restoreBT
-            // 
-            this.restoreBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.restoreBT.Location = new System.Drawing.Point(1049, 41);
-            this.restoreBT.Name = "restoreBT";
-            this.restoreBT.Size = new System.Drawing.Size(75, 23);
-            this.restoreBT.TabIndex = 2;
-            this.restoreBT.Text = "Restore";
-            this.restoreBT.UseVisualStyleBackColor = true;
-            this.restoreBT.Click += new System.EventHandler(this.restoreBT_Click);
             // 
             // SimulationForm
             // 

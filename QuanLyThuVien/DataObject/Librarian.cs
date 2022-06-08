@@ -8,7 +8,7 @@ namespace QuanLyThuVien.DataObject
     public class Librarian
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "Mã không được để trắng")]
-        [RegularExpression(@"^RD([0-9]{8})$", ErrorMessage = "Mã không đúng định dạng")]
+        [RegularExpression(@"^LB([0-9]{8})$", ErrorMessage = "Mã không đúng định dạng")]
         [DisplayName("Id")]
         [Column("Id")]
         public string Id { get; set; }

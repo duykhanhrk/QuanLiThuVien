@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginDetailForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.passTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -142,9 +143,10 @@
             this.ClientSize = new System.Drawing.Size(428, 546);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginDetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "LoginDetailForm";
+            this.Text = "Chi tiết";
             this.Shown += new System.EventHandler(this.LoginDetailForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
