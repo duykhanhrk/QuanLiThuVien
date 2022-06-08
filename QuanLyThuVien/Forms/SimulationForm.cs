@@ -185,6 +185,7 @@ namespace QuanLyThuVien.Forms
             try
             {
                 backupRestoreRepository.FullBackup();
+                MessageBox.Show("Tạo thành công");
             }
             catch (Exception ex)
             {
@@ -197,6 +198,7 @@ namespace QuanLyThuVien.Forms
             try
             {
                 backupRestoreRepository.DiffBackup();
+                MessageBox.Show("Tạo thành công");
             }
             catch (Exception ex)
             {
@@ -209,6 +211,7 @@ namespace QuanLyThuVien.Forms
             try
             {
                 backupRestoreRepository.FullRestore();
+                MessageBox.Show("Khôi phục dữ liệu thành công");
             }
             catch (Exception ex)
             {
@@ -221,6 +224,7 @@ namespace QuanLyThuVien.Forms
             try
             {
                 backupRestoreRepository.DiffRestore();
+                MessageBox.Show("Khôi phục dữ liệu thành công");
             }
             catch (Exception ex)
             {
@@ -233,6 +237,7 @@ namespace QuanLyThuVien.Forms
             try
             {
                 backupRestoreRepository.Restore();
+                MessageBox.Show("Khôi phục dữ liệu thành công");
             }
             catch (Exception ex)
             {

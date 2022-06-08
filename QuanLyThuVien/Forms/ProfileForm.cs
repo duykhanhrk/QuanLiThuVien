@@ -56,6 +56,9 @@ namespace QuanLyThuVien.Forms
             librarian.Address = addressTB.Text;
             librarian.Email = emailTB.Text;
 
+            librarian.Account.Username = usernameTB.Text;
+            librarian.Account.Password = passwordTB.Text;
+
             try
             {
                 repository.Update(librarian);
@@ -65,30 +68,6 @@ namespace QuanLyThuVien.Forms
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void updatePwTB_Click(object sender, EventArgs e)
-        {
-            librarian.Account.Username = usernameTB.Text;
-            librarian.Account.Password = passwordTB.Text;
-
-            try
-            {
-                accountRepository.UpdatetByLibrarianId(librarian.Id, librarian.Account);
-                MessageBox.Show("Cập nhật thành công");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void passwordTB_TextChange(object sender, EventArgs e)
-        {
-            if (passwordTB.Text == "" || passwordTB.Text != passwordCfTB.Text)
-                updatePwBT.Enabled = false;
-            else
-                updatePwBT.Enabled = true;
         }
     }
 }

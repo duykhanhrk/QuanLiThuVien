@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace QuanLyThuVien.DataObject
         [Column("username")]
         public string Username { get; set; }
 
+        [Browsable(false)]
         public string Password { get; set; }
 
         public List<SRole> SRoles { get; set; }

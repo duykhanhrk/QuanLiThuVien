@@ -12,7 +12,7 @@ namespace QuanLyThuVien.Repository
     {
         public void FullBackup()
         {
-            string commandText = @"BACKUP DATABASE QLTV TO DISK = 'D:\Backup\QLTV_FullBackup.bak' WITH INIT";
+            string commandText = @"BACKUP DATABASE QLTV TO DISK = 'D:\Backup\QLTV_Full.bak' WITH INIT";
 
             // Execute
             DbConnection.ExecuteNonQuery("Master", commandText, CommandType.Text);
@@ -20,7 +20,7 @@ namespace QuanLyThuVien.Repository
 
         public void DiffBackup()
         {
-            string commandText = @"BACKUP DATABASE QLTV TO DISK = 'D:\Backup\QLTV_Differential.bak' WITH DIFFERENTIAL, INIT";
+            string commandText = @"BACKUP DATABASE QLTV TO DISK = 'D:\Backup\QLTV_Diff.bak' WITH DIFFERENTIAL, INIT";
 
             // Execute
             DbConnection.ExecuteNonQuery("Master", commandText, CommandType.Text);
@@ -28,8 +28,9 @@ namespace QuanLyThuVien.Repository
 
         public void FullRestore()
         {
-            string commandText = @"ALTER DATABASE QLTV SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-                                   RESTORE DATABASE QLTV FROM DISK = 'D:\Backup\QLTV_FullBackup.bak' WITH REPLACE, NORECOVERY;
+            string commandText = @"ALTER DATABASE QLTV SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+                                   BACKUP LOG QLTV TO DISK = 'D:\Backup\QLTV_Log.trn' WITH INIT, NORECOVERY
+                                   RESTORE DATABASE QLTV FROM DISK = 'D:\Backup\QLTV_Full.bak' WITH RECOVERY
                                    ALTER DATABASE QLTV SET MULTI_USER";
 
             // Execute
@@ -38,8 +39,10 @@ namespace QuanLyThuVien.Repository
 
         public void DiffRestore()
         {
-            string commandText = @"ALTER DATABASE QLTV SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-                                   RESTORE DATABASE QLTV FROM DISK = 'D:\Backup\QLTV_Differential.bak' WITH RECOVERY;
+            string commandText = @"ALTER DATABASE QLTV SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+                                   BACKUP LOG QLTV TO DISK = 'D:\backup\QLTV_Log.trn' WITH INIT, NORECOVERY
+                                   RESTORE DATABASE QLTV FROM DISK = 'D:\Backup\QLTV_Full.bak' WITH NORECOVERY
+                                   RESTORE DATABASE QLTV FROM DISK = 'D:\Backup\QLTV_Diff.bak' WITH RECOVERY
                                    ALTER DATABASE QLTV SET MULTI_USER";
 
             // Execute

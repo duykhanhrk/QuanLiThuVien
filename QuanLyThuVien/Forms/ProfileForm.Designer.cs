@@ -50,7 +50,6 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -59,10 +58,6 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties26 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties27 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties28 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties29 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties30 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties31 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties32 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.updateInfoBT = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.addressTB = new Bunifu.UI.WinForms.BunifuTextBox();
             this.emailTB = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -78,17 +73,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.iDTB = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.updatePwBT = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.passwordCfTB = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.passwordTB = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.usernameTB = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // updateInfoBT
@@ -96,6 +89,7 @@
             this.updateInfoBT.AllowAnimations = true;
             this.updateInfoBT.AllowMouseEffects = true;
             this.updateInfoBT.AllowToggling = false;
+            this.updateInfoBT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.updateInfoBT.AnimationSpeed = 200;
             this.updateInfoBT.AutoGenerateColors = false;
             this.updateInfoBT.AutoRoundBorders = false;
@@ -138,7 +132,7 @@
             this.updateInfoBT.IdleIconLeftImage = null;
             this.updateInfoBT.IdleIconRightImage = null;
             this.updateInfoBT.IndicateFocus = false;
-            this.updateInfoBT.Location = new System.Drawing.Point(192, 322);
+            this.updateInfoBT.Location = new System.Drawing.Point(129, 450);
             this.updateInfoBT.Name = "updateInfoBT";
             this.updateInfoBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.updateInfoBT.OnDisabledState.BorderRadius = 8;
@@ -185,6 +179,7 @@
             // 
             this.addressTB.AcceptsReturn = false;
             this.addressTB.AcceptsTab = false;
+            this.addressTB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addressTB.AnimationSpeed = 200;
             this.addressTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.addressTB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -208,7 +203,7 @@
             this.addressTB.IconRight = null;
             this.addressTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.addressTB.Lines = new string[0];
-            this.addressTB.Location = new System.Drawing.Point(136, 267);
+            this.addressTB.Location = new System.Drawing.Point(110, 305);
             this.addressTB.MaxLength = 32767;
             this.addressTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.addressTB.Modified = false;
@@ -259,6 +254,7 @@
             // 
             this.emailTB.AcceptsReturn = false;
             this.emailTB.AcceptsTab = false;
+            this.emailTB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailTB.AnimationSpeed = 200;
             this.emailTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.emailTB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -282,7 +278,7 @@
             this.emailTB.IconRight = null;
             this.emailTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.emailTB.Lines = new string[0];
-            this.emailTB.Location = new System.Drawing.Point(136, 224);
+            this.emailTB.Location = new System.Drawing.Point(110, 262);
             this.emailTB.MaxLength = 32767;
             this.emailTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.emailTB.Modified = false;
@@ -331,6 +327,7 @@
             // 
             // birthdayDP
             // 
+            this.birthdayDP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.birthdayDP.BackColor = System.Drawing.Color.Transparent;
             this.birthdayDP.BorderRadius = 8;
             this.birthdayDP.Color = System.Drawing.Color.Silver;
@@ -347,7 +344,7 @@
             this.birthdayDP.IconColor = System.Drawing.Color.Gray;
             this.birthdayDP.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.birthdayDP.LeftTextMargin = 5;
-            this.birthdayDP.Location = new System.Drawing.Point(136, 186);
+            this.birthdayDP.Location = new System.Drawing.Point(110, 224);
             this.birthdayDP.MinimumSize = new System.Drawing.Size(4, 32);
             this.birthdayDP.Name = "birthdayDP";
             this.birthdayDP.Size = new System.Drawing.Size(260, 32);
@@ -355,6 +352,7 @@
             // 
             // sexDD
             // 
+            this.sexDD.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sexDD.BackColor = System.Drawing.Color.Transparent;
             this.sexDD.BackgroundColor = System.Drawing.Color.White;
             this.sexDD.BorderColor = System.Drawing.Color.Silver;
@@ -387,7 +385,7 @@
             this.sexDD.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
             this.sexDD.ItemHighLightForeColor = System.Drawing.Color.White;
             this.sexDD.ItemTopMargin = 3;
-            this.sexDD.Location = new System.Drawing.Point(136, 148);
+            this.sexDD.Location = new System.Drawing.Point(110, 186);
             this.sexDD.Name = "sexDD";
             this.sexDD.Size = new System.Drawing.Size(260, 32);
             this.sexDD.TabIndex = 26;
@@ -397,9 +395,10 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(85, 289);
+            this.label7.Location = new System.Drawing.Point(59, 327);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 15);
             this.label7.TabIndex = 25;
@@ -407,9 +406,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(91, 246);
+            this.label6.Location = new System.Drawing.Point(65, 284);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 15);
             this.label6.TabIndex = 24;
@@ -417,9 +417,10 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(71, 203);
+            this.label5.Location = new System.Drawing.Point(45, 241);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 15);
             this.label5.TabIndex = 23;
@@ -427,9 +428,10 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(78, 165);
+            this.label4.Location = new System.Drawing.Point(52, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 15);
             this.label4.TabIndex = 22;
@@ -439,6 +441,7 @@
             // 
             this.firstNameTB.AcceptsReturn = false;
             this.firstNameTB.AcceptsTab = false;
+            this.firstNameTB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.firstNameTB.AnimationSpeed = 200;
             this.firstNameTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.firstNameTB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -462,7 +465,7 @@
             this.firstNameTB.IconRight = null;
             this.firstNameTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.firstNameTB.Lines = new string[0];
-            this.firstNameTB.Location = new System.Drawing.Point(136, 105);
+            this.firstNameTB.Location = new System.Drawing.Point(110, 143);
             this.firstNameTB.MaxLength = 32767;
             this.firstNameTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.firstNameTB.Modified = false;
@@ -511,9 +514,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(102, 127);
+            this.label3.Location = new System.Drawing.Point(76, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 15);
             this.label3.TabIndex = 20;
@@ -523,6 +527,7 @@
             // 
             this.lastNameTB.AcceptsReturn = false;
             this.lastNameTB.AcceptsTab = false;
+            this.lastNameTB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lastNameTB.AnimationSpeed = 200;
             this.lastNameTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.lastNameTB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -546,7 +551,7 @@
             this.lastNameTB.IconRight = null;
             this.lastNameTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.lastNameTB.Lines = new string[0];
-            this.lastNameTB.Location = new System.Drawing.Point(136, 62);
+            this.lastNameTB.Location = new System.Drawing.Point(110, 100);
             this.lastNameTB.MaxLength = 32767;
             this.lastNameTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.lastNameTB.Modified = false;
@@ -595,9 +600,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(107, 84);
+            this.label2.Location = new System.Drawing.Point(81, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 15);
             this.label2.TabIndex = 18;
@@ -607,6 +613,7 @@
             // 
             this.iDTB.AcceptsReturn = false;
             this.iDTB.AcceptsTab = false;
+            this.iDTB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.iDTB.AnimationSpeed = 200;
             this.iDTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.iDTB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -631,7 +638,7 @@
             this.iDTB.IconRight = null;
             this.iDTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.iDTB.Lines = new string[0];
-            this.iDTB.Location = new System.Drawing.Point(136, 19);
+            this.iDTB.Location = new System.Drawing.Point(110, 57);
             this.iDTB.MaxLength = 32767;
             this.iDTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.iDTB.Modified = false;
@@ -680,194 +687,20 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(111, 41);
+            this.label1.Location = new System.Drawing.Point(85, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(19, 15);
             this.label1.TabIndex = 16;
             this.label1.Text = "ID";
             // 
-            // updatePwBT
-            // 
-            this.updatePwBT.AllowAnimations = true;
-            this.updatePwBT.AllowMouseEffects = true;
-            this.updatePwBT.AllowToggling = false;
-            this.updatePwBT.AnimationSpeed = 200;
-            this.updatePwBT.AutoGenerateColors = false;
-            this.updatePwBT.AutoRoundBorders = false;
-            this.updatePwBT.AutoSizeLeftIcon = true;
-            this.updatePwBT.AutoSizeRightIcon = true;
-            this.updatePwBT.BackColor = System.Drawing.Color.Transparent;
-            this.updatePwBT.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            this.updatePwBT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("updatePwBT.BackgroundImage")));
-            this.updatePwBT.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.updatePwBT.ButtonText = "Cập nhật";
-            this.updatePwBT.ButtonTextMarginLeft = 0;
-            this.updatePwBT.ColorContrastOnClick = 45;
-            this.updatePwBT.ColorContrastOnHover = 45;
-            this.updatePwBT.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.updatePwBT.CustomizableEdges = borderEdges2;
-            this.updatePwBT.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.updatePwBT.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.updatePwBT.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.updatePwBT.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.updatePwBT.Enabled = false;
-            this.updatePwBT.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.updatePwBT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.updatePwBT.ForeColor = System.Drawing.Color.White;
-            this.updatePwBT.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.updatePwBT.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.updatePwBT.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.updatePwBT.IconMarginLeft = 11;
-            this.updatePwBT.IconPadding = 10;
-            this.updatePwBT.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.updatePwBT.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.updatePwBT.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.updatePwBT.IconSize = 25;
-            this.updatePwBT.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            this.updatePwBT.IdleBorderRadius = 8;
-            this.updatePwBT.IdleBorderThickness = 1;
-            this.updatePwBT.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            this.updatePwBT.IdleIconLeftImage = null;
-            this.updatePwBT.IdleIconRightImage = null;
-            this.updatePwBT.IndicateFocus = false;
-            this.updatePwBT.Location = new System.Drawing.Point(192, 165);
-            this.updatePwBT.Name = "updatePwBT";
-            this.updatePwBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.updatePwBT.OnDisabledState.BorderRadius = 8;
-            this.updatePwBT.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.updatePwBT.OnDisabledState.BorderThickness = 1;
-            this.updatePwBT.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.updatePwBT.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.updatePwBT.OnDisabledState.IconLeftImage = null;
-            this.updatePwBT.OnDisabledState.IconRightImage = null;
-            this.updatePwBT.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(83)))), ((int)(((byte)(164)))));
-            this.updatePwBT.onHoverState.BorderRadius = 8;
-            this.updatePwBT.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.updatePwBT.onHoverState.BorderThickness = 1;
-            this.updatePwBT.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(83)))), ((int)(((byte)(164)))));
-            this.updatePwBT.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.updatePwBT.onHoverState.IconLeftImage = null;
-            this.updatePwBT.onHoverState.IconRightImage = null;
-            this.updatePwBT.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            this.updatePwBT.OnIdleState.BorderRadius = 8;
-            this.updatePwBT.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.updatePwBT.OnIdleState.BorderThickness = 1;
-            this.updatePwBT.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            this.updatePwBT.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.updatePwBT.OnIdleState.IconLeftImage = null;
-            this.updatePwBT.OnIdleState.IconRightImage = null;
-            this.updatePwBT.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
-            this.updatePwBT.OnPressedState.BorderRadius = 8;
-            this.updatePwBT.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.updatePwBT.OnPressedState.BorderThickness = 1;
-            this.updatePwBT.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
-            this.updatePwBT.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.updatePwBT.OnPressedState.IconLeftImage = null;
-            this.updatePwBT.OnPressedState.IconRightImage = null;
-            this.updatePwBT.Size = new System.Drawing.Size(150, 39);
-            this.updatePwBT.TabIndex = 37;
-            this.updatePwBT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.updatePwBT.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.updatePwBT.TextMarginLeft = 0;
-            this.updatePwBT.TextPadding = new System.Windows.Forms.Padding(0);
-            this.updatePwBT.UseDefaultRadiusAndThickness = true;
-            this.updatePwBT.Click += new System.EventHandler(this.updatePwTB_Click);
-            // 
-            // passwordCfTB
-            // 
-            this.passwordCfTB.AcceptsReturn = false;
-            this.passwordCfTB.AcceptsTab = false;
-            this.passwordCfTB.AnimationSpeed = 200;
-            this.passwordCfTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.passwordCfTB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.passwordCfTB.BackColor = System.Drawing.Color.Transparent;
-            this.passwordCfTB.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("passwordCfTB.BackgroundImage")));
-            this.passwordCfTB.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            this.passwordCfTB.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.passwordCfTB.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
-            this.passwordCfTB.BorderColorIdle = System.Drawing.Color.Silver;
-            this.passwordCfTB.BorderRadius = 8;
-            this.passwordCfTB.BorderThickness = 1;
-            this.passwordCfTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.passwordCfTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.passwordCfTB.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.passwordCfTB.DefaultText = "";
-            this.passwordCfTB.FillColor = System.Drawing.Color.White;
-            this.passwordCfTB.HideSelection = true;
-            this.passwordCfTB.IconLeft = null;
-            this.passwordCfTB.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.passwordCfTB.IconPadding = 10;
-            this.passwordCfTB.IconRight = null;
-            this.passwordCfTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.passwordCfTB.Lines = new string[0];
-            this.passwordCfTB.Location = new System.Drawing.Point(136, 105);
-            this.passwordCfTB.MaxLength = 32767;
-            this.passwordCfTB.MinimumSize = new System.Drawing.Size(1, 1);
-            this.passwordCfTB.Modified = false;
-            this.passwordCfTB.Multiline = false;
-            this.passwordCfTB.Name = "passwordCfTB";
-            stateProperties21.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            stateProperties21.FillColor = System.Drawing.Color.Empty;
-            stateProperties21.ForeColor = System.Drawing.Color.Empty;
-            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passwordCfTB.OnActiveState = stateProperties21;
-            stateProperties22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties22.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.passwordCfTB.OnDisabledState = stateProperties22;
-            stateProperties23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
-            stateProperties23.FillColor = System.Drawing.Color.Empty;
-            stateProperties23.ForeColor = System.Drawing.Color.Empty;
-            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passwordCfTB.OnHoverState = stateProperties23;
-            stateProperties24.BorderColor = System.Drawing.Color.Silver;
-            stateProperties24.FillColor = System.Drawing.Color.White;
-            stateProperties24.ForeColor = System.Drawing.Color.Empty;
-            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passwordCfTB.OnIdleState = stateProperties24;
-            this.passwordCfTB.Padding = new System.Windows.Forms.Padding(3);
-            this.passwordCfTB.PasswordChar = '*';
-            this.passwordCfTB.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.passwordCfTB.PlaceholderText = "Enter text";
-            this.passwordCfTB.ReadOnly = false;
-            this.passwordCfTB.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.passwordCfTB.SelectedText = "";
-            this.passwordCfTB.SelectionLength = 0;
-            this.passwordCfTB.SelectionStart = 0;
-            this.passwordCfTB.ShortcutsEnabled = true;
-            this.passwordCfTB.Size = new System.Drawing.Size(260, 37);
-            this.passwordCfTB.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.passwordCfTB.TabIndex = 36;
-            this.passwordCfTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.passwordCfTB.TextMarginBottom = 0;
-            this.passwordCfTB.TextMarginLeft = 3;
-            this.passwordCfTB.TextMarginTop = 0;
-            this.passwordCfTB.TextPlaceholder = "Enter text";
-            this.passwordCfTB.UseSystemPasswordChar = false;
-            this.passwordCfTB.WordWrap = true;
-            this.passwordCfTB.TextChange += new System.EventHandler(this.passwordTB_TextChange);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(23, 127);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(107, 15);
-            this.label12.TabIndex = 35;
-            this.label12.Text = "Nhập lại mật khẩu";
-            // 
             // passwordTB
             // 
             this.passwordTB.AcceptsReturn = false;
             this.passwordTB.AcceptsTab = false;
+            this.passwordTB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passwordTB.AnimationSpeed = 200;
             this.passwordTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.passwordTB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -891,32 +724,32 @@
             this.passwordTB.IconRight = null;
             this.passwordTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.passwordTB.Lines = new string[0];
-            this.passwordTB.Location = new System.Drawing.Point(136, 62);
+            this.passwordTB.Location = new System.Drawing.Point(110, 391);
             this.passwordTB.MaxLength = 32767;
             this.passwordTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.passwordTB.Modified = false;
             this.passwordTB.Multiline = false;
             this.passwordTB.Name = "passwordTB";
-            stateProperties25.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            stateProperties25.FillColor = System.Drawing.Color.Empty;
-            stateProperties25.ForeColor = System.Drawing.Color.Empty;
-            stateProperties25.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passwordTB.OnActiveState = stateProperties25;
-            stateProperties26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties26.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.passwordTB.OnDisabledState = stateProperties26;
-            stateProperties27.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
-            stateProperties27.FillColor = System.Drawing.Color.Empty;
-            stateProperties27.ForeColor = System.Drawing.Color.Empty;
-            stateProperties27.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passwordTB.OnHoverState = stateProperties27;
-            stateProperties28.BorderColor = System.Drawing.Color.Silver;
-            stateProperties28.FillColor = System.Drawing.Color.White;
-            stateProperties28.ForeColor = System.Drawing.Color.Empty;
-            stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passwordTB.OnIdleState = stateProperties28;
+            stateProperties21.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
+            stateProperties21.FillColor = System.Drawing.Color.Empty;
+            stateProperties21.ForeColor = System.Drawing.Color.Empty;
+            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passwordTB.OnActiveState = stateProperties21;
+            stateProperties22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties22.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.passwordTB.OnDisabledState = stateProperties22;
+            stateProperties23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
+            stateProperties23.FillColor = System.Drawing.Color.Empty;
+            stateProperties23.ForeColor = System.Drawing.Color.Empty;
+            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passwordTB.OnHoverState = stateProperties23;
+            stateProperties24.BorderColor = System.Drawing.Color.Silver;
+            stateProperties24.FillColor = System.Drawing.Color.White;
+            stateProperties24.ForeColor = System.Drawing.Color.Empty;
+            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passwordTB.OnIdleState = stateProperties24;
             this.passwordTB.Padding = new System.Windows.Forms.Padding(3);
             this.passwordTB.PasswordChar = '*';
             this.passwordTB.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -937,13 +770,13 @@
             this.passwordTB.TextPlaceholder = "Enter text";
             this.passwordTB.UseSystemPasswordChar = false;
             this.passwordTB.WordWrap = true;
-            this.passwordTB.TextChange += new System.EventHandler(this.passwordTB_TextChange);
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(72, 84);
+            this.label13.Location = new System.Drawing.Point(46, 413);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(58, 15);
             this.label13.TabIndex = 33;
@@ -953,6 +786,7 @@
             // 
             this.usernameTB.AcceptsReturn = false;
             this.usernameTB.AcceptsTab = false;
+            this.usernameTB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usernameTB.AnimationSpeed = 200;
             this.usernameTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.usernameTB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -976,32 +810,32 @@
             this.usernameTB.IconRight = null;
             this.usernameTB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.usernameTB.Lines = new string[0];
-            this.usernameTB.Location = new System.Drawing.Point(136, 19);
+            this.usernameTB.Location = new System.Drawing.Point(110, 348);
             this.usernameTB.MaxLength = 32767;
             this.usernameTB.MinimumSize = new System.Drawing.Size(1, 1);
             this.usernameTB.Modified = false;
             this.usernameTB.Multiline = false;
             this.usernameTB.Name = "usernameTB";
-            stateProperties29.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
-            stateProperties29.FillColor = System.Drawing.Color.Empty;
-            stateProperties29.ForeColor = System.Drawing.Color.Empty;
-            stateProperties29.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.usernameTB.OnActiveState = stateProperties29;
-            stateProperties30.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties30.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties30.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.usernameTB.OnDisabledState = stateProperties30;
-            stateProperties31.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
-            stateProperties31.FillColor = System.Drawing.Color.Empty;
-            stateProperties31.ForeColor = System.Drawing.Color.Empty;
-            stateProperties31.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.usernameTB.OnHoverState = stateProperties31;
-            stateProperties32.BorderColor = System.Drawing.Color.Silver;
-            stateProperties32.FillColor = System.Drawing.Color.White;
-            stateProperties32.ForeColor = System.Drawing.Color.Empty;
-            stateProperties32.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.usernameTB.OnIdleState = stateProperties32;
+            stateProperties25.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
+            stateProperties25.FillColor = System.Drawing.Color.Empty;
+            stateProperties25.ForeColor = System.Drawing.Color.Empty;
+            stateProperties25.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.usernameTB.OnActiveState = stateProperties25;
+            stateProperties26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties26.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.usernameTB.OnDisabledState = stateProperties26;
+            stateProperties27.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(73)))), ((int)(((byte)(154)))));
+            stateProperties27.FillColor = System.Drawing.Color.Empty;
+            stateProperties27.ForeColor = System.Drawing.Color.Empty;
+            stateProperties27.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.usernameTB.OnHoverState = stateProperties27;
+            stateProperties28.BorderColor = System.Drawing.Color.Silver;
+            stateProperties28.FillColor = System.Drawing.Color.White;
+            stateProperties28.ForeColor = System.Drawing.Color.Empty;
+            stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.usernameTB.OnIdleState = stateProperties28;
             this.usernameTB.Padding = new System.Windows.Forms.Padding(3);
             this.usernameTB.PasswordChar = '\0';
             this.usernameTB.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -1025,73 +859,80 @@
             // 
             // label14
             // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(65, 41);
+            this.label14.Location = new System.Drawing.Point(14, 370);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(65, 15);
+            this.label14.Size = new System.Drawing.Size(90, 15);
             this.label14.TabIndex = 31;
-            this.label14.Text = "Username";
+            this.label14.Text = "Tên đăng nhập";
             // 
-            // groupBox1
+            // panel1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.iDTB);
+            this.panel1.Controls.Add(this.usernameTB);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.firstNameTB);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.lastNameTB);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.updateInfoBT);
+            this.panel1.Controls.Add(this.birthdayDP);
+            this.panel1.Controls.Add(this.passwordTB);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.sexDD);
+            this.panel1.Controls.Add(this.addressTB);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.emailTB);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Location = new System.Drawing.Point(56, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(395, 513);
+            this.panel1.TabIndex = 35;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.firstNameTB);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.iDTB);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.lastNameTB);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.updateInfoBT);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.addressTB);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.emailTB);
-            this.groupBox1.Controls.Add(this.sexDD);
-            this.groupBox1.Controls.Add(this.birthdayDP);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(475, 377);
-            this.groupBox1.TabIndex = 38;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin";
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Location = new System.Drawing.Point(-1, -1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(395, 39);
+            this.panel2.TabIndex = 36;
             // 
-            // groupBox2
+            // label8
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.usernameTB);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.updatePwBT);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.passwordCfTB);
-            this.groupBox2.Controls.Add(this.passwordTB);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Location = new System.Drawing.Point(12, 395);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(475, 218);
-            this.groupBox2.TabIndex = 39;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tài khoản";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(171, 11);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 18);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Thông tin";
             // 
             // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(499, 761);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(499, 611);
+            this.Controls.Add(this.panel1);
             this.Name = "ProfileForm";
             this.Text = "ProfileForm";
             this.Shown += new System.EventHandler(this.ProfileForm_Shown);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1113,14 +954,12 @@
         private System.Windows.Forms.Label label2;
         private Bunifu.UI.WinForms.BunifuTextBox iDTB;
         private System.Windows.Forms.Label label1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton updatePwBT;
-        private Bunifu.UI.WinForms.BunifuTextBox passwordCfTB;
-        private System.Windows.Forms.Label label12;
         private Bunifu.UI.WinForms.BunifuTextBox passwordTB;
         private System.Windows.Forms.Label label13;
         private Bunifu.UI.WinForms.BunifuTextBox usernameTB;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -90,7 +90,10 @@ namespace QuanLyThuVien.Repository
                 actionString += sg.Delete ? "DELETE, " : "";
 
                 if (actionString == "")
+                {
+                    grantsString += $"REVOKE ALL ON {sg.TableName} FROM {obj.Name}\n";
                     continue;
+                }
 
                 actionString = actionString.Remove(actionString.Length - 2);
 
