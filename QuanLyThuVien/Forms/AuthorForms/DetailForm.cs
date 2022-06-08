@@ -22,58 +22,35 @@ namespace QuanLyThuVien.Forms.AuthorForms
 
         public DetailForm()
         {
+            author = new Author();
             InitializeComponent();
         }
 
-        public DetailForm(string authorId, int mode = 1)
+        public DetailForm(Author author, int mode = 1)
         {
             this.mode = mode;
-
-            // Get author data
-            try
-            {
-                author = repository.FindById(authorId);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-                Close();
-            }
+            this.author = author;
 
             InitializeComponent();
         }
 
         private void PrepareInterface()
         {
-            // Preparse suggests of sex
-            LazyMagic.BuildSexCombox(sexDD);
-
-            // Disable controls
             iDTB.Enabled = false;
-
-            // Only mode 2
-            if (mode == 2)
-            {
-                // Disable controls
-                LazyMagic.SetPropertyOfControlsFromForm(this, "Enabled", false,
-                    "lastNameTB", "firstNameTB", "sexDD", "birthdayDP", "emailTB",
-                    "addressTB", "saveBT");
-            }
         }
 
         private void PrepareData()
         {
+            // Preparse suggests of gender
+            sexDD.OfGender();
+
             // For mode 0
             if (mode == 0)
             {
-                int maxNum = Int32.Parse(repository.FindMaxId().Substring(2));
-                iDTB.Text = "AT" + (maxNum + 1).ToString().PadLeft(8, '0');
+                iDTB.Text = repository.FindNextId("AT");
                 return;
             }
 
-            // For mode 1, 2
-
-            // Infos
             iDTB.Text = author.Id;
             lastNameTB.Text = author.LastName;
             firstNameTB.Text = author.FirstName;
@@ -85,18 +62,24 @@ namespace QuanLyThuVien.Forms.AuthorForms
 
         private void SaveData()
         {
-            // Librarian
-            author = new Author(iDTB.Text, firstNameTB.Text, lastNameTB.Text,
-                    birthdayDP.Value, ((KeyValuePair<string, bool>)sexDD.SelectedItem).Value,
-                    addressTB.Text, emailTB.Text);
+            author.FirstName = firstNameTB.Text;
+            author.LastName = lastNameTB.Text;
+            author.Birthday = birthdayDP.Value;
+            author.Sex = ((KeyValuePair<string, bool>)sexDD.SelectedItem).Value;
+            author.Address = addressTB.Text;
+            author.Email = emailTB.Text;
 
-            // Execute
             try
             {
                 if (mode == 0)
+                {
+                    author.Id = iDTB.Text;
                     repository.Create(author);
+                }
                 else
+                {
                     repository.Update(author);
+                }
 
                 _successed = true;
 

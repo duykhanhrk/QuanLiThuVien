@@ -16,7 +16,7 @@ namespace QuanLyThuVien.Forms.LiquidatingSlipDetailForms
     public partial class DetailForm : Form
     {
         // Control
-        int mode = 0; // 0 : creation , 1: update
+        private bool creationMode;
 
         private bool _successed = false;
         public bool Successed
@@ -34,24 +34,28 @@ namespace QuanLyThuVien.Forms.LiquidatingSlipDetailForms
         // Repository
         private BookRepository bookRepository = new BookRepository();
 
-        public DetailForm()
+        public DetailForm(bool createMode = false)
         {
-            mode = 0;
+            this.creationMode = createMode;
             _selfObject = new LiquidatingSlipDetail();
             InitializeComponent();
         }
 
-        public DetailForm(LiquidatingSlipDetail liquidatingSlipDetail , int mode = 1)
+        public DetailForm(LiquidatingSlipDetail liquidatingSlipDetail, bool creationMode = false)
         {
-            this.mode = mode;
+            this.creationMode = creationMode;
             _selfObject = liquidatingSlipDetail;
             InitializeComponent();
         }
 
         private void PrepareInterface()
         {
-            if (mode != 0)
-                bookDD.Enabled = false;
+            if (creationMode)
+                return;
+
+            bookDD.Enabled = false;
+            priceTB.Enabled = false;
+            saveBT.Enabled = false;
         }
 
         private void PrepareData()
@@ -70,7 +74,7 @@ namespace QuanLyThuVien.Forms.LiquidatingSlipDetailForms
                 Close();
             }
 
-            if (mode == 0)
+            if (creationMode)
                 return;
 
             try
@@ -85,25 +89,22 @@ namespace QuanLyThuVien.Forms.LiquidatingSlipDetailForms
             }
 
             priceTB.Text = _selfObject.Price.ToString();
-            notesTB.Text = _selfObject.Notes;
         }
 
         private void SaveData()
         {
-            if (mode == 0)
-                _selfObject.BookId = (bookDD.SelectedItem as Book).Id;
 
             try
             {
+                _selfObject.Notes = notesTB.Text;
+                _selfObject.BookId = (bookDD.SelectedItem as Book).Id;
                 _selfObject.Price = Decimal.Parse(priceTB.Text);
+                _successed = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-            _selfObject.Notes = notesTB.Text;
-            _successed = true;
         }
 
         private void DetailForm_Shown(object sender, EventArgs e)

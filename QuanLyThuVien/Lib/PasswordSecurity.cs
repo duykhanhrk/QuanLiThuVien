@@ -8,6 +8,9 @@ namespace QuanLyThuVien.Lib
     {
         public static string Encrypt(string password)
         {
+            if (password == "")
+                return "";
+
             byte[] salt = Encoding.ASCII.GetBytes(System.Configuration.ConfigurationManager.AppSettings["Secret"]);
 
             string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(

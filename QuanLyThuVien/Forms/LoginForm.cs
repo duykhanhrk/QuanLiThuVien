@@ -35,15 +35,9 @@ namespace QuanLyThuVien.Forms
             _logged = false;
         }
 
-        private void loginBT_Click(object sender, EventArgs e)
+        // Login
+        private void login()
         {
-            // Dev
-            if (iDTB.Text == "" || passwordTB.Text == "")
-            {
-                iDTB.Text = "LB00000011";
-                passwordTB.Text = "12";
-            }
-
             try
             {
                 _librarian = authRepository.Login(iDTB.Text, passwordTB.Text);
@@ -54,6 +48,30 @@ namespace QuanLyThuVien.Forms
             {
                 MessageBox.Show(ex.Message, "Thông báo");
             }
+        }
+
+        private void loginBT_Click(object sender, EventArgs e)
+        {
+            // Dev
+            if (iDTB.Text == "" || passwordTB.Text == "")
+            {
+                iDTB.Text = "LB00000011";
+                passwordTB.Text = "12";
+            }
+
+            login();
+        }
+
+        private void iDTB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter && iDTB.Text != "" && passwordTB.Text != "")
+                login();
+        }
+
+        private void passwordTB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter && iDTB.Text != "" && passwordTB.Text != "")
+                login();
         }
     }
 }

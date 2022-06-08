@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -26,10 +27,16 @@ namespace QuanLyThuVien.DataObject
         public int Pages { get; set; }
 
         [Required]
+        [Browsable(false)]
         [Range(1, float.MaxValue)]
-        [DisplayName("Giá")]
         [Column("Price")]
         public decimal Price { get; set; }
+
+        [DisplayName("Giá")]
+        public string PriceDisplay
+        {
+            get { return String.Format("{0:n0}", Price) + " VNĐ"; }
+        }
 
         [Required]
         [DisplayName("Ngày phát hành")]
@@ -41,20 +48,16 @@ namespace QuanLyThuVien.DataObject
         [Column("PublisherId")]
         public string PublisherId { get; set; }
 
-        // ..
+        [Browsable(false)]
+        public List<BookCategory> Categories { get; set; }
+
+        [Browsable(false)]
+        public List<Author> Authors { get; set; }
 
         public BookTitle()
         {
-        }
-
-        public BookTitle(string iSBN, string name, int pages, decimal price, DateTime releaseDate, string publisherId)
-        {
-            ISBN = iSBN;
-            Name = name;
-            Pages = pages;
-            Price = price;
-            ReleaseDate = releaseDate;
-            PublisherId = publisherId;
+            Categories = new List<BookCategory>();
+            Authors = new List<Author>();
         }
     }
 }

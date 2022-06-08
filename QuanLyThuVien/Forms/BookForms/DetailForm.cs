@@ -33,43 +33,36 @@ namespace QuanLyThuVien.Forms.BookForms
 
         public DetailForm()
         {
+            book = new Book();
             InitializeComponent();
         }
 
-        public DetailForm(string bookId, int mode = 1)
+        public DetailForm(Book book, int mode = 1)
         {
             this.mode = mode;
-
-            // Get book title data
-            try
-            {
-                book = repository.FindById(bookId);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-                Load += (s, e) => Close();
-                return;
-            }
+            this.book = book;
 
             InitializeComponent();
         }
 
         private void PrepareInterface()
         {
-            if (mode != 0)
-                iDTB.Enabled = false;
+            iDTB.Enabled = false;
         }
 
         private void PrepareData()
         {
             var bookTitles = new List<BookTitle>();
             var bookCases = new List<BookCase>();
-            short[] sizes = new short[] { 1, 2, 3 };
+            var sizes = new Dictionary<string, short>();
+            sizes.Add("Nhỏ", 1);
+            sizes.Add("Vừa", 2);
+            sizes.Add("Lớn", 3);
+
             try
             {
                 // Sizes
-                sizeDD.DataSource = sizes;
+                sizeDD.QuickBuild(sizes, "Key", "Value");
 
                 // Book titles
                 bookTitles = bookTitleRepository.GetAll();
@@ -86,12 +79,15 @@ namespace QuanLyThuVien.Forms.BookForms
             }
 
             if (mode == 0)
+            {
+                iDTB.Text = repository.FindNextId("BK");
                 return;
+            }
 
             try
             {
                 // Sizes
-                sizeDD.SelectedItem = sizes.First(t => (int) t == book.Size);
+                sizeDD.SelectedItem = sizes.First(t => t.Value == book.Size);
 
                 // Book titles
                 bookTitleDD.SelectedItem = bookTitles.Find(t => t.ISBN == book.BookTitleISBN);
@@ -115,14 +111,21 @@ namespace QuanLyThuVien.Forms.BookForms
             // Execute
             try
             {
-                book = new Book(iDTB.Text, (short)sizeDD.SelectedItem, notesTB.Text,
-                    (bookTitleDD.SelectedItem as BookTitle).ISBN, (caseDD.SelectedItem as Case).Id,
-                    (Archive.Get("CurrentLibrarian") as Librarian).Id);
+                book.Size = (short)sizeDD.SelectedValue;
+                book.Notes = notesTB.Text;
+                book.BookTitleISBN = (bookTitleDD.SelectedItem as BookTitle).ISBN;
+                book.CaseId = (caseDD.SelectedItem as Case).Id;
 
                 if (mode == 0)
+                {
+                    book.Id = iDTB.Text;
+                    book.LibrarianId = (Archive.Get("CurrentLibrarian") as Librarian).Id;
                     repository.Create(book);
+                }
                 else
+                {
                     repository.Update(book);
+                }
 
                 _successed = true;
 

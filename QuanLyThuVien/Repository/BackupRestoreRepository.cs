@@ -45,5 +45,13 @@ namespace QuanLyThuVien.Repository
             // Execute
             DbConnection.ExecuteNonQuery("Master", commandText, CommandType.Text);
         }
+
+        public void Restore()
+        {
+            string commandText = @"RESTORE DATABASE QLTV";
+
+            // Execute
+            DbConnection.ExecuteNonQuery("Master", commandText, CommandType.Text);
+        }
     }
 }

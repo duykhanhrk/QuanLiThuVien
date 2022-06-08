@@ -9,11 +9,10 @@ namespace QuanLyThuVien.DataObject
     [Table("Account")]
     public class Account
     {
-        [Required(AllowEmptyStrings = false)]
-        [MaxLength(50)]
-        [MinLength(1)]
-        [Column("Username")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Tên đăng nhập không thể để trắng")]
+        [RegularExpression(@"^[a-zA-Z0-9]{2,50}$", ErrorMessage = "Tên đăng nhập ít nhất 2 kí tự, không chứa khoảng trắng và kí tự đặc biệt")]
         [DisplayName("Tên đăng nhập")]
+        [Column("Username")]
         public string Username { get; set; }
 
         [Required]
@@ -21,49 +20,26 @@ namespace QuanLyThuVien.DataObject
         public bool Enable { get; set; }
 
         [Column("UserableId")]
-        public string UserableID { get; set; }
+        public string UserableId { get; set; }
 
         [Column("UserableType")]
         public string UserableType { get; set; }
 
-        private string password_digest;
+        private string passwordDigest;
 
-        [Required(AllowEmptyStrings = false)]
-        [MinLength(1)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Mật khẩu không được để trống")]
+        public string PasswordDigest
+        {
+            get { return passwordDigest; }
+        }
+
         public string Password
         {
-            get { return password_digest; }
-            set { password_digest = PasswordSecurity.Encrypt(value); }
+            set { passwordDigest = PasswordSecurity.Encrypt(value); }
         }
 
         public Account()
         {
-        }
-
-        public Account(string username, string password)
-        {
-            Debug.WriteLine(PasswordSecurity.Encrypt(password));
-            Username = username;
-            Password = password;
-            Debug.WriteLine(Password);
-        }
-
-        public Account(string username, string password, bool enable)
-        {
-            Debug.WriteLine(PasswordSecurity.Encrypt(password));
-            Username = username;
-            Password = password;
-            Enable = enable;
-            Debug.WriteLine(Password);
-        }
-
-        public Account(string username, string password, bool enable, string userableID, string userableType)
-        {
-            Username = username;
-            Password = password;
-            Enable = enable;
-            UserableID = userableID;
-            UserableType = userableType;
         }
     }
 }

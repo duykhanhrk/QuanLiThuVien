@@ -22,58 +22,33 @@ namespace QuanLyThuVien.Forms.ReaderForms
 
         public DetailForm()
         {
+            reader = new Reader();
             InitializeComponent();
         }
 
-        public DetailForm(string readerId, int mode = 1)
+        public DetailForm(Reader reader, int mode = 1)
         {
             this.mode = mode;
-
-            // Get reader data
-            try
-            {
-                reader = repository.FindById(readerId);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-                Close();
-            }
+            this.reader = reader;
 
             InitializeComponent();
         }
 
         private void PrepareInterface()
         {
-            // Preparse suggests of sex
-            LazyMagic.BuildSexCombox(sexDD);
-
-            // Disable controls
             iDTB.Enabled = false;
-
-            // Only mode 2
-            if (mode == 2)
-            {
-                // Disable controls
-                LazyMagic.SetPropertyOfControlsFromForm(this, "Enabled", false,
-                    "lastNameTB", "firstNameTB", "sexDD", "birthdayDP", "emailTB",
-                    "addressTB", "phonenubmerTB", "saveBT");
-            }
         }
 
         private void PrepareData()
         {
-            // For mode 0
+            sexDD.OfGender();
+
             if (mode == 0)
             {
-                int maxNum = Int32.Parse(repository.FindMaxId().Substring(2));
-                iDTB.Text = "RD" + (maxNum + 1).ToString().PadLeft(8, '0');
+                iDTB.Text = repository.FindNextId("RD");
                 return;
             }
 
-            // For mode 1, 2
-
-            // Infos
             iDTB.Text = reader.Id;
             lastNameTB.Text = reader.LastName;
             firstNameTB.Text = reader.FirstName;
@@ -86,19 +61,27 @@ namespace QuanLyThuVien.Forms.ReaderForms
 
         private void SaveData()
         {
-            // Librarian
-            reader = new Reader(iDTB.Text, firstNameTB.Text, lastNameTB.Text,
-                    ((KeyValuePair<string, bool>)sexDD.SelectedItem).Value,
-                    addressTB.Text, birthdayDP.Value, emailTB.Text, phoneNumberTB.Text,
-                    (Archive.Get("CurrentLibrarian") as Librarian).Id);
+            reader.FirstName = firstNameTB.Text;
+            reader.LastName = lastNameTB.Text;
+            reader.Sex = ((KeyValuePair<string, bool>)sexDD.SelectedItem).Value;
+            reader.Address = addressTB.Text;
+            reader.Birthday = birthdayDP.Value;
+            reader.Email = emailTB.Text;
+            reader.PhoneNumber = phoneNumberTB.Text;
 
             // Execute
             try
             {
                 if (mode == 0)
+                {
+                    reader.Id = iDTB.Text;
+                    reader.LibrarianId = (Archive.Get("CurrentLibrarian") as Librarian).Id;
                     repository.Create(reader);
+                }
                 else
+                {
                     repository.Update(reader);
+                }
 
                 _successed = true;
 

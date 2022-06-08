@@ -16,7 +16,7 @@ namespace QuanLyThuVien.Forms.LiquidatingSlipForms
     public partial class DetailForm : Form
     {
         // Control
-        int mode = 0; // 0: Creation, 1: update, 2: show
+        private bool createMode;
         private bool _successed = false;
         public bool Successed
         {
@@ -36,17 +36,16 @@ namespace QuanLyThuVien.Forms.LiquidatingSlipForms
 
         public DetailForm()
         {
-            mode = 0;
+            createMode = true;
             _selfObject = new LiquidatingSlip();
             InitializeComponent();
         }
 
-        public DetailForm(LiquidatingSlip liquidatingSlip, int mode = 1)
+        public DetailForm(LiquidatingSlip liquidatingSlip)
         {
-            this.mode = mode;
+            createMode = false;
             _selfObject = liquidatingSlip;
 
-            // Load LendingSlipDetails
             try
             {
                 _selfObject.LiquidatingSlipDetails = liquidatingSlipDetailRepository.GetAllOfLiquidatingSlip(liquidatingSlip.Id);
@@ -65,13 +64,18 @@ namespace QuanLyThuVien.Forms.LiquidatingSlipForms
             LibrarianIDTB.Enabled = false;
             createdAtDP.Enabled = false;
 
-            iDTB.Text = repository.FindNextId().ToString();
-            LibrarianIDTB.Text = (Archive.Get("CurrentLibrarian") as Librarian).Id;
+            if (!createMode)
+            {
+                saveBT.Enabled = false;
+            }
         }
 
         private void PrepareData()
         {
-            if (mode == 0)
+            iDTB.Text = repository.FindNextId().ToString();
+            LibrarianIDTB.Text = (Archive.Get("CurrentLibrarian") as Librarian).Id;
+
+            if (createMode)
                 return;
 
             iDTB.Text = _selfObject.Id.ToString();
@@ -84,15 +88,8 @@ namespace QuanLyThuVien.Forms.LiquidatingSlipForms
             // Execute
             try
             {
-                if (mode == 0)
-                {
-                    _selfObject.CreatedBy = (Archive.Get("CurrentLibrarian") as Librarian).Id;
-                    repository.Create(_selfObject);
-                }
-                else
-                {
-                    repository.Update(_selfObject);
-                }
+                _selfObject.CreatedBy = (Archive.Get("CurrentLibrarian") as Librarian).Id;
+                repository.Create(_selfObject);
 
                 _successed = true;
 
@@ -117,9 +114,11 @@ namespace QuanLyThuVien.Forms.LiquidatingSlipForms
 
         private void detailsBT_Click(object sender, EventArgs e)
         {
-            LiquidatingSlipDetailForm liquidatingSlipDetailForm = new LiquidatingSlipDetailForm(_selfObject.LiquidatingSlipDetails);
+            LiquidatingSlipDetailForm liquidatingSlipDetailForm = new LiquidatingSlipDetailForm(_selfObject.LiquidatingSlipDetails, createMode);
             liquidatingSlipDetailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             liquidatingSlipDetailForm.ShowDialog();
+
+            _selfObject.LiquidatingSlipDetails = liquidatingSlipDetailForm.SelfObject;
         }
 
         private void closeBT_Click(object sender, EventArgs e)

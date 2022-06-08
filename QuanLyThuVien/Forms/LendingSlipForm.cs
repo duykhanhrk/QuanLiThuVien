@@ -43,7 +43,7 @@ namespace QuanLyThuVien.Forms
 
             LendingSlip lendingSlip = (LendingSlip)listDGV.Rows[e.RowIndex].DataBoundItem;
 
-            DetailForm detailForm = new DetailForm(lendingSlip);
+            DetailForm detailForm = new DetailForm(lendingSlip, 1, true);
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
 
@@ -53,7 +53,7 @@ namespace QuanLyThuVien.Forms
 
         private void creationBT_Click(object sender, EventArgs e)
         {
-            DetailForm detailForm = new DetailForm();
+            DetailForm detailForm = new DetailForm(false);
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
 
@@ -68,7 +68,7 @@ namespace QuanLyThuVien.Forms
 
             LendingSlip lendingSlip = (LendingSlip)listDGV.CurrentRow.DataBoundItem;
 
-            DetailForm detailForm = new DetailForm(lendingSlip);
+            DetailForm detailForm = new DetailForm(lendingSlip, 1, true);
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
 

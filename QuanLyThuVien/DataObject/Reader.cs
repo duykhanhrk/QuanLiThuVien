@@ -7,28 +7,34 @@ namespace QuanLyThuVien.DataObject
 {
     public class Reader
     {
-        [Required(AllowEmptyStrings = false)]
-        [StringLength(10)]
-        [DisplayName("Id")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Mã không được để trắng")]
+        [RegularExpression(@"^RD([0-9]{8})$", ErrorMessage = "Mã không đúng định dạng")]
+        [DisplayName("Mã")]
         [Column("Id")]
         public string Id { get; set; }
 
-        [Required(AllowEmptyStrings = false)]
-        [MaxLength(30)]
-        [DisplayName("Tên")]
-        [Column("FirstName")]
-        public string FirstName { get; set; }
-
-        [Required(AllowEmptyStrings = false)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Họ không được để trắng")]
         [MaxLength(50)]
         [DisplayName("Họ")]
         [Column("LastName")]
         public string LastName { get; set; }
 
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Tên không được để trắng")]
+        [MaxLength(30)]
+        [DisplayName("Tên")]
+        [Column("FirstName")]
+        public string FirstName { get; set; }
+
         [Required]
-        [DisplayName("Giới tính")]
         [Column("Sex")]
+        [Browsable(false)]
         public bool Sex { get; set; }
+
+        [DisplayName("Giới tính")]
+        public string SexDisplay
+        {
+            get { return Sex ? "Nam" : "Nữ"; }
+        }
 
         [Required(AllowEmptyStrings = false)]
         [DisplayName("Địa chỉ")]
@@ -41,19 +47,27 @@ namespace QuanLyThuVien.DataObject
         public DateTime Birthday { get; set; }
 
         [Required(AllowEmptyStrings = false)]
+        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Email không đúng định dạng")]
         [DisplayName("Email")]
         [Column("Email")]
         public string Email { get; set; }
 
         [Required(AllowEmptyStrings = false)]
-        [DisplayName("PhoneNumber")]
+        [RegularExpression(@"^\(?\d{3}\)?-? *\d{3}-? *-?\d{4}$", ErrorMessage = "Số điện thoại không đúng định dạng")]
+        [DisplayName("Số điện thoại")]
         [Column("PhoneNumber")]
         public string PhoneNumber { get; set; }
 
         [Required(AllowEmptyStrings = false)]
-        [DisplayName("LibrarianId")]
+        [Browsable(false)]
         [Column("LibrarianId")]
         public string LibrarianId { get; set; }
+
+        [Browsable(false)]
+        public string IdFullNameDisplay
+        {
+            get { return $"{Id} - {LastName} {FirstName}"; }
+        }
 
         public Reader()
         {

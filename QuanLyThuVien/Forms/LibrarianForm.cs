@@ -25,14 +25,11 @@ namespace QuanLyThuVien.Forms
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Refesh data
-        /// </summary>
         private void RefreshData()
         {
             try
             {
-                librarians = repository.GetAll();
+                librarians = repository.FilterByKeyword(searchTB.Text);
                 librarianDGV.DataSource = librarians;
                 librarianDGV.Refresh();
             }
@@ -52,9 +49,9 @@ namespace QuanLyThuVien.Forms
             if (e.RowIndex < 0)
                 return;
 
-            string id = librarianDGV.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+            Librarian librarian = (Librarian)librarianDGV.Rows[e.RowIndex].DataBoundItem;
 
-            DetailForm detailForm = new LibrarianFroms.DetailForm(id);
+            DetailForm detailForm = new LibrarianFroms.DetailForm(librarian);
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
 
@@ -77,9 +74,9 @@ namespace QuanLyThuVien.Forms
             if (librarianDGV.SelectedRows.Count == 0)
                 return;
 
-            string id = librarianDGV.CurrentRow.Cells["Id"].Value.ToString();
+            Librarian librarian = (Librarian)librarianDGV.CurrentRow.DataBoundItem;
 
-            DetailForm detailForm = new DetailForm(id);
+            DetailForm detailForm = new DetailForm(librarian);
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
 
@@ -89,16 +86,7 @@ namespace QuanLyThuVien.Forms
 
         private void searchTB_TextChange(object sender, EventArgs e)
         {
-            try
-            {
-                librarians = repository.GetAll(searchTB.Text);
-                librarianDGV.DataSource = librarians;
-                librarianDGV.Refresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-            }
+            RefreshData();
         }
 
         private void deleteBT_Click(object sender, EventArgs e)
@@ -106,11 +94,11 @@ namespace QuanLyThuVien.Forms
             if (librarianDGV.SelectedRows.Count == 0)
                 return;
 
-            string id = librarianDGV.CurrentRow.Cells["Id"].Value.ToString();
+            Librarian librarian = (Librarian)librarianDGV.CurrentRow.DataBoundItem;
 
             try
             {
-                repository.Delete(id);
+                repository.Delete(librarian.Id);
                 RefreshData();
             }
             catch (Exception ex)

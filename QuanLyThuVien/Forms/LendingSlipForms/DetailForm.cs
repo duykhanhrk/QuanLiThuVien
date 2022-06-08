@@ -10,7 +10,8 @@ namespace QuanLyThuVien.Forms.LendingSlipForms
     public partial class DetailForm : Form
     {
         // Control
-        int mode = 0; // 0: Creation, 1: update, 2: show
+        private int mode; // 0: Creation, 1: update, 2: show
+        private bool onlyAction;
         private bool _successed = false;
         public bool Successed
         {
@@ -29,15 +30,17 @@ namespace QuanLyThuVien.Forms.LendingSlipForms
             get { return _selfObject; }
         }
 
-        public DetailForm()
+        public DetailForm(bool onlyAction = false)
         {
+            this.onlyAction = onlyAction;
             mode = 0;
             _selfObject = new LendingSlip();
             InitializeComponent();
         }
 
-        public DetailForm(LendingSlip lendingSlip, int mode = 1)
+        public DetailForm(LendingSlip lendingSlip, int mode = 1, bool onlyAction = false)
         {
+            this.onlyAction = onlyAction;
             this.mode = mode;
             _selfObject = lendingSlip;
 
@@ -59,6 +62,12 @@ namespace QuanLyThuVien.Forms.LendingSlipForms
             iDTB.Enabled = false;
             LibrarianIDTB.Enabled = false;
             createdAtDP.Enabled = false;
+
+            if (onlyAction)
+            {
+                readerDD.Enabled = false;
+                saveBT.Enabled = false;
+            }
 
             iDTB.Text = repository.FindNextId().ToString();
             LibrarianIDTB.Text = (Archive.Get("CurrentLibrarian") as Librarian).Id;
@@ -139,9 +148,18 @@ namespace QuanLyThuVien.Forms.LendingSlipForms
 
         private void detailsBT_Click(object sender, EventArgs e)
         {
-            LendingSlipDetailForm lendingSlipDetailForm = new LendingSlipDetailForm(_selfObject.LendingSlipDetails);
+            LendingSlipDetailForm lendingSlipDetailForm = new LendingSlipDetailForm(_selfObject.LendingSlipDetails, onlyAction);
             lendingSlipDetailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             lendingSlipDetailForm.ShowDialog();
+
+            _selfObject.LendingSlipDetails = lendingSlipDetailForm.SelfObject;
+
+            _successed = lendingSlipDetailForm.Successed;
+        }
+
+        private void closeBT_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

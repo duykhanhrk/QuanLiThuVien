@@ -15,6 +15,7 @@ namespace QuanLyThuVien.DataObject
         public string BookId { get; set; }
 
         [Column("LiquidatingSlipId")]
+        [Browsable(false)]
         [DisplayName("Mã phiếu thanh lí")]
         public long LiquidatingSlipId { get; set; }
 

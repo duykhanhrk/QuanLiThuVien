@@ -22,7 +22,7 @@ namespace QuanLyThuVien.Forms
         {
             try
             {
-                list = repository.GetAll();
+                list = repository.FilterByKeyword(searchTB.Text);
                 listDGV.DataSource = list;
                 listDGV.Refresh();
             }
@@ -42,9 +42,9 @@ namespace QuanLyThuVien.Forms
             if (e.RowIndex < 0)
                 return;
 
-            string id = listDGV.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+            Book book = (Book)listDGV.Rows[e.RowIndex].DataBoundItem;
 
-            DetailForm detailForm = new DetailForm(id);
+            DetailForm detailForm = new DetailForm(book);
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
 
@@ -67,9 +67,9 @@ namespace QuanLyThuVien.Forms
             if (listDGV.SelectedRows.Count == 0)
                 return;
 
-            string id = listDGV.CurrentRow.Cells["Id"].Value.ToString();
+            Book book = (Book)listDGV.CurrentRow.DataBoundItem;
 
-            DetailForm detailForm = new DetailForm(id);
+            DetailForm detailForm = new DetailForm(book);
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
 
@@ -82,11 +82,11 @@ namespace QuanLyThuVien.Forms
             if (listDGV.SelectedRows.Count == 0)
                 return;
 
-            string id = listDGV.CurrentRow.Cells["Id"].Value.ToString();
+            Book book = (Book)listDGV.CurrentRow.DataBoundItem;
 
             try
             {
-                repository.Delete(id);
+                repository.Delete(book.Id);
                 RefreshData();
             }
             catch (Exception ex)
@@ -96,6 +96,11 @@ namespace QuanLyThuVien.Forms
         }
 
         private void refreshBT_Click(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void searchTB_TextChange(object sender, EventArgs e)
         {
             RefreshData();
         }

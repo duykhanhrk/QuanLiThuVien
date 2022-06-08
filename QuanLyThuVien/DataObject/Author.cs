@@ -7,19 +7,19 @@ namespace QuanLyThuVien.DataObject
 {
     public class Author
     {
-        [Required(AllowEmptyStrings = false)]
-        [StringLength(10)]
-        [DisplayName("Id")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Mã không được để trắng")]
+        [RegularExpression(@"^AT([0-9]{8})$", ErrorMessage = "Mã không đúng định dạng")]
+        [DisplayName("Mã")]
         [Column("Id")]
         public string Id { get; set; }
 
-        [Required(AllowEmptyStrings = false)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Tên không được để trắng")]
         [MaxLength(30)]
         [DisplayName("Tên")]
         [Column("FirstName")]
         public string FirstName { get; set; }
 
-        [Required(AllowEmptyStrings = false)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Họ không được để trắng")]
         [MaxLength(50)]
         [DisplayName("Họ")]
         [Column("LastName")]
@@ -32,32 +32,29 @@ namespace QuanLyThuVien.DataObject
 
         [Required]
         [DisplayName("Giới tính")]
+        [Browsable(false)]
         [Column("Sex")]
         public bool Sex { get; set; }
 
-        [Required(AllowEmptyStrings = false)]
+        [DisplayName("Giới tính")]
+        public string SexDisplay
+        {
+            get { return Sex ? "Nam" : "Nữ"; }
+        }
+
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Địa chỉ không được để trắng")]
         [DisplayName("Địa chỉ")]
         [Column("Address")]
         public string Address { get; set; }
 
         [Required(AllowEmptyStrings = false)]
+        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Email không đúng định dạng")]
         [DisplayName("Email")]
         [Column("Email")]
         public string Email { get; set; }
 
         public Author()
         {
-        }
-
-        public Author(string id, string firstName, string lastName, DateTime birthday, bool sex, string address, string email)
-        {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
-            Birthday = birthday;
-            Sex = sex;
-            Address = address;
-            Email = email;
         }
 
         public override string ToString()

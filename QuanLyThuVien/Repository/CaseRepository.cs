@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyThuVien.Repository
 {
-    public class CaseRepository : RepositoryAction<Case>
+    public class CaseRepository : RepositoryAction<Case, long>
     {
         public List<Case> GetAllOfBookCase(string bookCaseId)
         {

@@ -3,7 +3,12 @@ using QuanLyThuVien.Forms.LendingSlipDetailForms;
 using QuanLyThuVien.Repository;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyThuVien.Forms
@@ -11,7 +16,12 @@ namespace QuanLyThuVien.Forms
     public partial class LendingSlipDetailForm : Form
     {
         // Control
-        private short mode = 0;
+        private bool onlyAction;
+        private bool _successed = false;
+        public bool Successed
+        {
+            get { return _successed; }
+        }
 
         // Repository
         private LendingSlipDetailRepository repository = new LendingSlipDetailRepository();
@@ -24,30 +34,33 @@ namespace QuanLyThuVien.Forms
             get { return _selfObject; }
         }
 
-        public LendingSlipDetailForm()
+        public LendingSlipDetailForm(List<LendingSlipDetail> list, bool onlyAction = false)
         {
-            mode = 0;
-            _selfObject = new List<LendingSlipDetail>();
-            InitializeComponent();
-        }
-
-        public LendingSlipDetailForm(List<LendingSlipDetail> list, short mode = 0)
-        {
-            this.mode = mode;
-            _selfObject = list;
+            this.onlyAction = onlyAction;
+            _selfObject = new List<LendingSlipDetail>(list);
             InitializeComponent();
         }
 
         private void RefreshData()
         {
-            listDGV.DataSource = null;
+            listDGV.DataSource = new List<LendingSlipDetail>();
             listDGV.DataSource = _selfObject;
             listDGV.Refresh();
         }
 
         private void LendingSlipDetailForm_Shown(object sender, EventArgs e)
         {
-            RefreshData();
+            if (_selfObject.Count > 0)
+            {
+                listDGV.DataSource = _selfObject;
+                listDGV.Refresh();
+            }
+
+            if (onlyAction)
+            {
+                creationBT.Enabled = false;
+                deleteBT.Enabled = false;
+            }
         }
 
         private void listDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -57,7 +70,7 @@ namespace QuanLyThuVien.Forms
 
             LendingSlipDetail lendingSlipDetail = (LendingSlipDetail)listDGV.Rows[e.RowIndex].DataBoundItem;
 
-            DetailForm detailForm = new DetailForm(lendingSlipDetail);
+            DetailForm detailForm = new DetailForm(lendingSlipDetail, 1, onlyAction);
 
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
@@ -68,7 +81,13 @@ namespace QuanLyThuVien.Forms
 
         private void creationBT_Click(object sender, EventArgs e)
         {
-            DetailForm detailForm = new DetailForm();
+            if (_selfObject.Count > 2)
+            {
+                MessageBox.Show("Số sách không vượt 3 quyển");
+                return;
+            }
+
+            DetailForm detailForm = new DetailForm(onlyAction);
 
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
@@ -87,10 +106,12 @@ namespace QuanLyThuVien.Forms
 
             LendingSlipDetail lendingSlipDetail = (LendingSlipDetail)listDGV.CurrentRow.DataBoundItem;
 
-            DetailForm detailForm = new DetailForm(lendingSlipDetail);
+            DetailForm detailForm = new DetailForm(lendingSlipDetail, 1, onlyAction);
 
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
+
+            _successed = detailForm.Successed;
 
             if (detailForm.Successed)
                 RefreshData();

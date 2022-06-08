@@ -11,24 +11,16 @@ namespace QuanLyThuVien.DataObject
 {
     public class LiquidatingSlip
     {
-        [DisplayName("Id")]
+        [DisplayName("Mã")]
         [Column("Id")]
         public long Id { get; set; }
-
-        [DisplayName("Ngày thanh lý")]
-        [Column("LiquidatedAt")]
-        public DateTime LiquidatedAt { get; set; }
-
-        [DisplayName("Ngày thanh lý bởi")]
-        [Column("LiquidatedBy")]
-        public string LiquidatedBy { get; set; }
 
         [DisplayName("Ngày tạo")]
         [Column("CreatedAt")]
         public DateTime CreatedAt { get; set; }
 
         [Required]
-        [DisplayName("Ngày bởi")]
+        [DisplayName("Tạo bởi")]
         [Column("CreatedBy")]
         public string CreatedBy { get; set; }
 

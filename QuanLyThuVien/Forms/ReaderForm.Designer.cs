@@ -113,7 +113,7 @@
             this.refreshBT.IdleIconLeftImage = null;
             this.refreshBT.IdleIconRightImage = null;
             this.refreshBT.IndicateFocus = false;
-            this.refreshBT.Location = new System.Drawing.Point(480, 10);
+            this.refreshBT.Location = new System.Drawing.Point(480, 12);
             this.refreshBT.Name = "refreshBT";
             this.refreshBT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.refreshBT.OnDisabledState.BorderRadius = 8;
@@ -509,7 +509,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 65);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(12);
-            this.panel2.Size = new System.Drawing.Size(1168, 385);
+            this.panel2.Size = new System.Drawing.Size(1168, 497);
             this.panel2.TabIndex = 7;
             // 
             // listDGV
@@ -532,6 +532,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -574,9 +575,10 @@
             this.listDGV.Name = "listDGV";
             this.listDGV.ReadOnly = true;
             this.listDGV.RowHeadersVisible = false;
+            this.listDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.listDGV.RowTemplate.Height = 40;
             this.listDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listDGV.Size = new System.Drawing.Size(1144, 361);
+            this.listDGV.Size = new System.Drawing.Size(1144, 473);
             this.listDGV.TabIndex = 2;
             this.listDGV.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Navy;
             this.listDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listDGV_CellDoubleClick);
@@ -586,7 +588,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1168, 450);
+            this.ClientSize = new System.Drawing.Size(1168, 562);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ReaderForm";

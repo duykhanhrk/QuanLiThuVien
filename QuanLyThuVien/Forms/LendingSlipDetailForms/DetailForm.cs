@@ -16,7 +16,8 @@ namespace QuanLyThuVien.Forms.LendingSlipDetailForms
     public partial class DetailForm : Form
     {
         // Control
-        int mode = 0; // 0 : creation , 1: update
+        private int mode; // 0 : creation , 1: update
+        private bool onlyAction;
 
         private bool _successed = false;
         public bool Successed
@@ -32,15 +33,20 @@ namespace QuanLyThuVien.Forms.LendingSlipDetailForms
         }
 
         // Repository
+        private LendingSlipDetailRepository repository = new LendingSlipDetailRepository();
         private BookRepository bookRepository = new BookRepository();
 
-        public DetailForm()
+        public DetailForm(bool onlyAction = false)
         {
+            this.onlyAction = onlyAction;
+            mode = 0;
+            _selfObject = new LendingSlipDetail();
             InitializeComponent();
         }
 
-        public DetailForm(LendingSlipDetail lendingSlipDetail, int mode = 1)
+        public DetailForm(LendingSlipDetail lendingSlipDetail, int mode = 1, bool onlyAction = false)
         {
+            this.onlyAction = onlyAction;
             this.mode = mode;
             _selfObject = lendingSlipDetail;
             InitializeComponent();
@@ -48,7 +54,30 @@ namespace QuanLyThuVien.Forms.LendingSlipDetailForms
 
         private void PrepareInterface()
         {
-            // pass
+            if (!onlyAction)
+            {
+                tookBackBT.Enabled = false;
+                extendedTB.Enabled = false;
+
+                return;
+            }
+
+            bookDD.Enabled = false;
+            notesTB.Enabled = false;
+            dueBackDP.Enabled = false;
+            saveBT.Enabled = false;
+
+            if (_selfObject.TookBack)
+            {
+                tookBackBT.Enabled = false;
+                extendedTB.Enabled = false;
+                return;
+            }
+
+
+            if (_selfObject.Extended)
+                extendedTB.Enabled = false;
+
         }
 
         private void PrepareData()
@@ -58,7 +87,7 @@ namespace QuanLyThuVien.Forms.LendingSlipDetailForms
             try
             {
                 // Book cases
-                books = bookRepository.GetAll();
+                books = bookRepository.GetAllBy("Lending", false);
                 bookDD.QuickBuild(books, "Id", "Id");
             }
             catch (Exception ex)
@@ -82,12 +111,13 @@ namespace QuanLyThuVien.Forms.LendingSlipDetailForms
             }
 
             dueBackDP.Value = _selfObject.DueBackDate;
-            notesTB.Text = _selfObject.Notes;
         }
 
         private void SaveData()
         {
-            _selfObject = new LendingSlipDetail((bookDD.SelectedItem as Book).Id, 0, dueBackDP.Value, notesTB.Text);
+            _selfObject.BookId = (bookDD.SelectedItem as Book).Id;
+            _selfObject.DueBackDate = dueBackDP.Value;
+
             _successed = true;
         }
 
@@ -100,6 +130,48 @@ namespace QuanLyThuVien.Forms.LendingSlipDetailForms
         private void saveBT_Click(object sender, EventArgs e)
         {
             SaveData();
+            Close();
+        }
+
+        private void extendedTB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _selfObject.ExtendedBy = (Archive.Get("CurrentLibrarian") as Librarian).Id;
+                repository.Extend(SelfObject);
+
+                extendedTB.Enabled = false;
+                _selfObject.Extended = true;
+                _successed = true;
+                dueBackDP.Value = _selfObject.DueBackDate.AddDays(7);
+                MessageBox.Show("Gia hạn thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void tookBackBT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _selfObject.TookBackBy = (Archive.Get("CurrentLibrarian") as Librarian).Id;
+                repository.TookBack(SelfObject);
+
+                tookBackBT.Enabled = false;
+                _selfObject.TookBack = true;
+                _successed = true;
+                MessageBox.Show("Cập nhật thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void closeBT_Click(object sender, EventArgs e)
+        {
             Close();
         }
     }

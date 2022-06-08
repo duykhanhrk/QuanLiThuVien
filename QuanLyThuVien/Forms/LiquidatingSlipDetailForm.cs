@@ -16,7 +16,7 @@ namespace QuanLyThuVien.Forms
     public partial class LiquidatingSlipDetailForm : Form
     {
         // Control
-        private short mode = 0;
+        private bool createMode;
 
         // Object
         private List<LiquidatingSlipDetail> _selfObject;
@@ -25,28 +25,31 @@ namespace QuanLyThuVien.Forms
             get { return _selfObject; }
         }
 
-        public LiquidatingSlipDetailForm()
+        public LiquidatingSlipDetailForm(List<LiquidatingSlipDetail> list, bool createMode = false)
         {
-            InitializeComponent();
-        }
-
-        public LiquidatingSlipDetailForm(List<LiquidatingSlipDetail> list, short mode  = 0)
-        {
-            this.mode = mode;
-            _selfObject = list;
+            this.createMode = createMode;
+            _selfObject = new List<LiquidatingSlipDetail>(list);
             InitializeComponent();
         }
 
         private void RefreshData()
         {
-            listDGV.DataSource = null;
+            listDGV.DataSource = new List<LiquidatingSlipDetail>();
             listDGV.DataSource = _selfObject;
             listDGV.Refresh();
         }
 
         private void LiquidatingSlipDetailForm_Shown(object sender, EventArgs e)
         {
-            RefreshData();
+            if (_selfObject.Count > 0)
+                RefreshData();
+
+            if (!createMode)
+            {
+                creationBT.Enabled = false;
+                updateBT.Enabled = false;
+                deleteBT.Enabled = false;
+            }
         }
 
         private void listDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -56,7 +59,7 @@ namespace QuanLyThuVien.Forms
 
             LiquidatingSlipDetail liquidatingSlipDetail = (LiquidatingSlipDetail)listDGV.Rows[e.RowIndex].DataBoundItem;
 
-            DetailForm detailForm = new DetailForm(liquidatingSlipDetail);
+            DetailForm detailForm = new DetailForm(liquidatingSlipDetail, createMode);
 
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
@@ -67,7 +70,7 @@ namespace QuanLyThuVien.Forms
 
         private void creationBT_Click(object sender, EventArgs e)
         {
-            DetailForm detailForm = new DetailForm();
+            DetailForm detailForm = new DetailForm(createMode);
 
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
@@ -103,6 +106,7 @@ namespace QuanLyThuVien.Forms
             LiquidatingSlipDetail liquidatingSlipDetail = (LiquidatingSlipDetail)listDGV.CurrentRow.DataBoundItem;
 
             _selfObject.Remove(liquidatingSlipDetail);
+
             RefreshData();
         }
 

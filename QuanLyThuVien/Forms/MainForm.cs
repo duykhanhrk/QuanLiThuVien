@@ -47,18 +47,21 @@ namespace QuanLyThuVien.Forms
             loginForm.ShowDialog();
 
             if (!loginForm.Logged)
+            {
                 Close();
+                return;
+            }
 
             // Save current librarian to Archive
             Archive.Save("CurrentLibrarian", loginForm.Librarian);
 
             // Show profile form
-            SetContentForm(typeof(ProfileForm), loginForm.Librarian.Id);
+            SetContentForm(typeof(ProfileForm), loginForm.Librarian);
         }
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            SetContentForm(typeof(ProfileForm), (Archive.Get("CurrentLibrarian") as Librarian).Id);
+            SetContentForm(typeof(ProfileForm), Archive.Get("CurrentLibrarian") as Librarian);
         }
 
         private void bunifuButton4_Click(object sender, EventArgs e)
@@ -104,6 +107,28 @@ namespace QuanLyThuVien.Forms
         private void liquidatingSlipBT_Click(object sender, EventArgs e)
         {
             SetContentForm(typeof(LiquidatingSlipForm));
+        }
+
+        private void logoutBT_Click(object sender, EventArgs e)
+        {
+            // Clear data
+            contentPanel.Controls.Clear();
+            Archive.Clear();
+
+            // Relogin
+            LoginForm loginForm = new LoginForm();
+            loginForm.FormBorderStyle = FormBorderStyle.FixedSingle;
+            loginForm.ShowDialog();
+
+            if (!loginForm.Logged)
+                Close();
+
+            // Save current librarian to Archive
+            Archive.Save("CurrentLibrarian", loginForm.Librarian);
+
+            // Show profile form
+            profileBT.Focus();
+            SetContentForm(typeof(ProfileForm), loginForm.Librarian);
         }
     }
 }

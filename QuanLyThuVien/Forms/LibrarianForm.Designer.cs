@@ -517,8 +517,6 @@
             this.librarianDGV.AllowCustomTheming = true;
             this.librarianDGV.AllowUserToAddRows = false;
             this.librarianDGV.AllowUserToDeleteRows = false;
-            this.librarianDGV.AllowUserToOrderColumns = true;
-            this.librarianDGV.AllowUserToResizeColumns = false;
             this.librarianDGV.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(223)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
@@ -532,6 +530,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -571,10 +570,13 @@
             this.librarianDGV.HeaderForeColor = System.Drawing.Color.White;
             this.librarianDGV.Location = new System.Drawing.Point(12, 12);
             this.librarianDGV.Margin = new System.Windows.Forms.Padding(24);
+            this.librarianDGV.MultiSelect = false;
             this.librarianDGV.Name = "librarianDGV";
             this.librarianDGV.ReadOnly = true;
             this.librarianDGV.RowHeadersVisible = false;
+            this.librarianDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.librarianDGV.RowTemplate.Height = 40;
+            this.librarianDGV.RowTemplate.ReadOnly = true;
             this.librarianDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.librarianDGV.Size = new System.Drawing.Size(1059, 361);
             this.librarianDGV.TabIndex = 2;

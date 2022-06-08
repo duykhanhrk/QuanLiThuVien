@@ -21,7 +21,7 @@ namespace QuanLyThuVien.Forms
         {
             try
             {
-                list = repository.GetAll();
+                list = repository.FilterByKeyword(searchTB.Text);
                 listDGV.DataSource = list;
                 listDGV.Refresh();
             }
@@ -95,6 +95,11 @@ namespace QuanLyThuVien.Forms
         }
 
         private void refreshBT_Click(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void searchTB_TextChange(object sender, EventArgs e)
         {
             RefreshData();
         }

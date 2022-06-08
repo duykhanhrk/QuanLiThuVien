@@ -7,8 +7,8 @@ namespace QuanLyThuVien.DataObject
 {
     public class Librarian
     {
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Id không được để trắng")]
-        [StringLength(10)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Mã không được để trắng")]
+        [RegularExpression(@"^RD([0-9]{8})$", ErrorMessage = "Mã không đúng định dạng")]
         [DisplayName("Id")]
         [Column("Id")]
         public string Id { get; set; }
@@ -32,10 +32,18 @@ namespace QuanLyThuVien.DataObject
 
         [Required]
         [DisplayName("Giới tính")]
+        [Browsable(false)]
         [Column("Sex")]
         public bool Sex { get; set; }
 
+        [DisplayName("Giới tính")]
+        public string SexDisplay
+        {
+            get { return Sex ? "Nam" : "Nữ"; }
+        }
+
         [Required(AllowEmptyStrings = false, ErrorMessage = "Email không được để trắng")]
+        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Email không đúng định dạng")]
         [DisplayName("Email")]
         [Column("Email")]
         public string Email { get; set; }
@@ -45,19 +53,12 @@ namespace QuanLyThuVien.DataObject
         [Column("Address")]
         public string Address { get; set; }
 
+        [Browsable(false)]
+        public Account Account { get; set; }
+
         public Librarian()
         {
-        }
-
-        public Librarian(string id, string firstName, string lastName, DateTime birthday, bool sex, string address, string email)
-        {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
-            Birthday = birthday;
-            Sex = sex;
-            Address = address;
-            Email = email;
+            Account = new Account();
         }
     }
 }

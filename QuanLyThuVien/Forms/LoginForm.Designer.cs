@@ -120,6 +120,7 @@
             this.iDTB.TextPlaceholder = "Tên đăng nhập";
             this.iDTB.UseSystemPasswordChar = false;
             this.iDTB.WordWrap = true;
+            this.iDTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.iDTB_KeyDown);
             // 
             // passwordTB
             // 
@@ -196,6 +197,7 @@
             this.passwordTB.TextPlaceholder = "123456";
             this.passwordTB.UseSystemPasswordChar = false;
             this.passwordTB.WordWrap = true;
+            this.passwordTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTB_KeyDown);
             // 
             // loginBT
             // 

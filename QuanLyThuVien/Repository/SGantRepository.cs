@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace QuanLyThuVien.Repository
 {
-    public class SGantRepository : RepositoryAction<SGrant>
+    public class SGantRepository
     {
         public List<SGrant> GetAllOfSRole(string roleName)
         {
             string commandText = "sp_get_sgrants_of_role";
             SqlParameter parameterRoleName = new SqlParameter("@role_name", roleName);
-            SqlDataReader reader = DbConnection.ExecuteReader(commandText, CommandType.StoredProcedure, parameterRoleName);
+            SqlDataReader reader = DbConnection.ExecuteReader("SA", commandText, CommandType.StoredProcedure, parameterRoleName);
 
             List<SGrant> list = new List<SGrant>();
             DataAdapter.Fill(reader, list);

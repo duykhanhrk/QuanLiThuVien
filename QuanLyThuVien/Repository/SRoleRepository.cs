@@ -7,27 +7,31 @@ using System.Data.SqlClient;
 
 namespace QuanLyThuVien.Repository
 {
-    public class SRoleRepository : RepositoryAction<SRole>
+    public class SRoleRepository
     {
-        public override List<SRole> GetAll()
+        public List<SRole> GetAll()
         {
             string commandText = "SELECT name FROM sysusers WHERE issqlrole = 1";
 
-            return Get(commandText);
-        }
-
-        public List<SRole> GetAllOfLogin(string loginname)
-        {
-            string commandText = "sp_get_all_roles_of_user";
-            SqlParameter parameterLoginName = new SqlParameter("@loginname", loginname);
-            SqlDataReader reader = DbConnection.ExecuteReader(commandText, CommandType.StoredProcedure, parameterLoginName);
+            SqlDataReader reader = DbConnection.ExecuteReader("SA", commandText, CommandType.Text);
             List<SRole> list = new List<SRole>();
             DataAdapter.Fill(reader, list);
 
             return list;
         }
 
-        public override void Create(SRole obj, params KeyValuePair<string, object>[] pairs)
+        public List<SRole> GetAllOfLogin(string loginname)
+        {
+            string commandText = "sp_get_all_roles_of_user";
+            SqlParameter parameterLoginName = new SqlParameter("@loginname", loginname);
+            SqlDataReader reader = DbConnection.ExecuteReader("SA", commandText, CommandType.StoredProcedure, parameterLoginName);
+            List<SRole> list = new List<SRole>();
+            DataAdapter.Fill(reader, list);
+
+            return list;
+        }
+
+        public void Create(SRole obj)
         {
             // Validate
             DataValidation.Validate(obj);
@@ -63,14 +67,14 @@ namespace QuanLyThuVien.Repository
                 "RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState) END CATCH";
 
             // Execute
-            int rows = DbConnection.ExecuteNonQuery(sqlTransaction, CommandType.Text);
+            int rows = DbConnection.ExecuteNonQuery("SA", sqlTransaction, CommandType.Text);
 
             // Exception
             if (rows == 0)
                 throw new Exception("Tạo không thành công");
         }
 
-        public override void Update(SRole obj, params KeyValuePair<string, object>[] pairs)
+        public void Update(SRole obj)
         {
             // Validate
             DataValidation.Validate(obj);
@@ -106,20 +110,20 @@ namespace QuanLyThuVien.Repository
                 "RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState) END CATCH";
 
             // Execute
-            int rows = DbConnection.ExecuteNonQuery(sqlTransaction, CommandType.Text);
+            int rows = DbConnection.ExecuteNonQuery("SA", sqlTransaction, CommandType.Text);
 
             // Exception
             if (rows == 0)
                 throw new Exception("Tạo không thành công");
         }
 
-        public override void Delete(object id)
+        public void Delete(object id)
         {
             // Command text
             string commandText = $"DROP ROLE {id}";
 
             // Execute
-            int rows = DbConnection.ExecuteNonQuery(commandText, CommandType.Text);
+            int rows = DbConnection.ExecuteNonQuery("SA", commandText, CommandType.Text);
 
             // Exception
             if (rows == 0)

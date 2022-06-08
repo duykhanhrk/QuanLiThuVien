@@ -27,7 +27,7 @@ namespace QuanLyThuVien.Forms
         {
             try
             {
-                list = repository.GetAll();
+                list = repository.FilterByKeyword(searchTB.Text);
                 listDGV.DataSource = list;
                 listDGV.Refresh();
             }
@@ -47,9 +47,9 @@ namespace QuanLyThuVien.Forms
             if (e.RowIndex < 0)
                 return;
 
-            string id = listDGV.Rows[e.RowIndex].Cells["ISBN"].Value.ToString();
+            BookTitle bookTitle = (BookTitle)listDGV.Rows[e.RowIndex].DataBoundItem;
 
-            DetailForm detailForm = new DetailForm(id);
+            DetailForm detailForm = new DetailForm(bookTitle);
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
 
@@ -72,9 +72,9 @@ namespace QuanLyThuVien.Forms
             if (listDGV.SelectedRows.Count == 0)
                 return;
 
-            string id = listDGV.CurrentRow.Cells["ISBN"].Value.ToString();
+            BookTitle bookTitle = (BookTitle)listDGV.CurrentRow.DataBoundItem;
 
-            DetailForm detailForm = new DetailForm(id);
+            DetailForm detailForm = new DetailForm(bookTitle);
             detailForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             detailForm.ShowDialog();
 
@@ -87,11 +87,11 @@ namespace QuanLyThuVien.Forms
             if (listDGV.SelectedRows.Count == 0)
                 return;
 
-            string id = listDGV.CurrentRow.Cells["ISBN"].Value.ToString();
+            BookTitle bookTitle = (BookTitle)listDGV.CurrentRow.DataBoundItem;
 
             try
             {
-                repository.Delete(id);
+                repository.Delete(bookTitle.ISBN);
                 RefreshData();
             }
             catch (Exception ex)
@@ -107,16 +107,7 @@ namespace QuanLyThuVien.Forms
 
         private void searchTB_TextChange(object sender, EventArgs e)
         {
-            try
-            {
-                list = repository.GetAll(searchTB.Text);
-                listDGV.DataSource = list;
-                listDGV.Refresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-            }
+            RefreshData();
         }
     }
 }

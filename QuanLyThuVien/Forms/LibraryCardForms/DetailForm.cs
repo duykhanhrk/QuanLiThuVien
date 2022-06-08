@@ -62,11 +62,12 @@ namespace QuanLyThuVien.Forms.LibraryCardForms
         private void PrepareData()
         {
             var readers = new List<Reader>();
+
             try
             {
                 // Readers
                 readers = readereRepository.GetAll();
-                readerDD.QuickBuild(readers, "Id", "Id");
+                readerDD.QuickBuild(readers, "IdFullNameDisplay", "Id");
             }
             catch (Exception ex)
             {
@@ -102,6 +103,7 @@ namespace QuanLyThuVien.Forms.LibraryCardForms
             iDTB.Text = _selfObject.Id.ToString();
             effectiveDateDP.Value = _selfObject.EffectiveDate;
             effectiveEndDateDP.Value = _selfObject.EffectiveEndDate;
+            feeTB.Text = ((long)_selfObject.Fee).ToString();
             notesTB.Text = "";
         }
 

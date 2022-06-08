@@ -217,6 +217,12 @@
     <Compile Include="Forms\BookTitleForms\DetailForm.Designer.cs">
       <DependentUpon>DetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LendingSlipDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LendingSlipDetailForm.Designer.cs">
+      <DependentUpon>LendingSlipDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LendingSlipDetailForms\DetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,12 +240,6 @@
     </Compile>
     <Compile Include="Forms\LendingSlipForms\DetailForm.Designer.cs">
       <DependentUpon>DetailForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\LendingSlipDetailForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\LendingSlipDetailForm.Designer.cs">
-      <DependentUpon>LendingSlipDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LibrarianForm.cs">
       <SubType>Form</SubType>
@@ -389,6 +389,9 @@
     <EmbeddedResource Include="Forms\BookTitleForms\DetailForm.resx">
       <DependentUpon>DetailForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LendingSlipDetailForm.resx">
+      <DependentUpon>LendingSlipDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LendingSlipDetailForms\DetailForm.resx">
       <DependentUpon>DetailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -397,9 +400,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LendingSlipForms\DetailForm.resx">
       <DependentUpon>DetailForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LendingSlipDetailForm.resx">
-      <DependentUpon>LendingSlipDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LibrarianForm.resx">
       <DependentUpon>LibrarianForm.cs</DependentUpon>

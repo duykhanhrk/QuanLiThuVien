@@ -8,25 +8,25 @@ using System.Linq;
 
 namespace QuanLyThuVien.Repository
 {
-    public class BookTitleRepository : RepositoryAction<BookTitle>
+    public class BookTitleRepository : RepositoryAction<BookTitle, string>
     {
-        public List<BookTitle> GetAll(string search)
+        public override void Create(BookTitle obj, params KeyValuePair<string, object>[] pairs)
         {
-            string commandText = "SELECT * FROM BookTitle WHERE ISBN LIKE @search OR Name LIKE @search";
-            SqlParameter parameterSearch = new SqlParameter("@search", $"%{search.Trim()}%");  
+            var bookCategoryIds = String.Join(",", obj.Categories.Select(t => t.Id));
+            var bookAuthorIds = String.Join(",", obj.Authors.Select(t => t.Id));
 
-            return Get(commandText, parameterSearch);
+            base.Create(obj, "categories".PairWith(bookCategoryIds), "authors".PairWith(bookAuthorIds));
         }
 
-        public BookTitle findByISBN(string iSBN)
+        public override void Update(BookTitle obj, params KeyValuePair<string, object>[] pairs)
         {
-            string commandText = "SELECT * FROM BookTitle WHERE ISBN = @isbn";
-            SqlParameter parameterSearch = new SqlParameter("@isbn", iSBN);
+            var bookCategoryIds = String.Join(",", obj.Categories.Select(t => t.Id));
+            var bookAuthorIds = String.Join(",", obj.Authors.Select(t => t.Id));
 
-            return Find(commandText, parameterSearch);
+            base.Update(obj, "categories".PairWith(bookCategoryIds), "authors".PairWith(bookAuthorIds));
         }
 
-        public void Delete(string iSBN)
+        public override void Delete(string iSBN)
         {
             // Command Text
             string commandText = "sp_delete_book_title";

@@ -227,5 +227,17 @@ namespace QuanLyThuVien.Forms
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void restoreBT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                backupRestoreRepository.Restore();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

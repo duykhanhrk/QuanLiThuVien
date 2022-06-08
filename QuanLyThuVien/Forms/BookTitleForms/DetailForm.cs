@@ -35,23 +35,14 @@ namespace QuanLyThuVien.Forms.BookTitleForms
 
         public DetailForm()
         {
+            bookTitle = new BookTitle();
             InitializeComponent();
         }
 
-        public DetailForm(string readerId, int mode = 1)
+        public DetailForm(BookTitle bookTitle, int mode = 1)
         {
             this.mode = mode;
-
-            // Get book title data
-            try
-            {
-                bookTitle = repository.findByISBN(readerId);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-                Close();
-            }
+            this.bookTitle = bookTitle;
 
             InitializeComponent();
         }
@@ -67,11 +58,12 @@ namespace QuanLyThuVien.Forms.BookTitleForms
             List<Publisher> publishers = new List<Publisher>();
             List<BookCategory> categories = new List<BookCategory>();
             List<Author> authors = new List<Author>();
+
             try
             {
                 // Publisher
                 publishers = publisherRepository.GetAll();
-                LazyMagic.BuildComboBox(publisherDD, publishers, "Id", "Id");
+                publisherDD.QuickBuild(publishers, "IdNameDisplay", "Id");
 
                 // Categories
                 categories = bookCategoryRepository.GetAll();
@@ -96,12 +88,12 @@ namespace QuanLyThuVien.Forms.BookTitleForms
                 publisherDD.SelectedItem = publishers.Find(t => t.Id == bookTitle.PublisherId);
 
                 // Category
-                var bookCategories = bookCategoryRepository.GetAllOfBookTitle(bookTitle);
-                bookCategoryCLB.SetItemsCheckState<BookCategory>(bookCategories.ToArray(), "Id", CheckState.Checked);
+                bookTitle.Categories = bookCategoryRepository.GetAllOfBookTitle(bookTitle);
+                bookCategoryCLB.SetItemsCheckState<BookCategory>(bookTitle.Categories.ToArray(), "Id", CheckState.Checked);
 
                 // Author
-                var bookAuthors = authorRepository.GetAllOfBookTitle(bookTitle);
-                authorCLB.SetItemsCheckState<Author>(bookAuthors.ToArray(), "Id", CheckState.Checked);
+                bookTitle.Authors = authorRepository.GetAllOfBookTitle(bookTitle);
+                authorCLB.SetItemsCheckState<Author>(bookTitle.Authors.ToArray(), "Id", CheckState.Checked);
             }
             catch (Exception ex)
             {
@@ -111,7 +103,7 @@ namespace QuanLyThuVien.Forms.BookTitleForms
             iSBNTB.Text = bookTitle.ISBN;
             nameTB.Text = bookTitle.Name;
             pagesTB.Text = bookTitle.Pages.ToString();
-            priceTB.Text = bookTitle.Price.ToString();
+            priceTB.Text = ((long)bookTitle.Price).ToString();
             releaseDateDP.Value = bookTitle.ReleaseDate;
         }
 
@@ -120,20 +112,24 @@ namespace QuanLyThuVien.Forms.BookTitleForms
             // Execute
             try
             {
-                bookTitle = new BookTitle(iSBNTB.Text, nameTB.Text, Int32.Parse(pagesTB.Text), Decimal.Parse(priceTB.Text),
-                    releaseDateDP.Value, (publisherDD.SelectedItem as Publisher).Id);
+                bookTitle.Name = nameTB.Text;
+                bookTitle.Pages = Int32.Parse(pagesTB.Text);
+                bookTitle.Price = Decimal.Parse(priceTB.Text);
+                bookTitle.ReleaseDate = releaseDateDP.Value;
+                bookTitle.PublisherId = (publisherDD.SelectedItem as Publisher).Id;
 
-                var bookCategoryIds = String.Join(",", bookCategoryCLB.CheckedItems.OfType<BookCategory>().Select(t => t.Id));
-                var bookAuthorIds = String.Join(",", authorCLB.CheckedItems.OfType<Author>().Select(t => t.Id));
+                bookTitle.Categories = bookCategoryCLB.CheckedItems.OfType<BookCategory>().ToList();
+                bookTitle.Authors = authorCLB.CheckedItems.OfType<Author>().ToList();
 
                 if (mode == 0)
-                    repository.Create(bookTitle,
-                        "categories".PairWith(bookCategoryIds),
-                        "authors".PairWith(bookAuthorIds));
+                {
+                    bookTitle.ISBN = iSBNTB.Text;
+                    repository.Create(bookTitle);
+                }
                 else
-                    repository.Update(bookTitle,
-                        "categories".PairWith(bookCategoryIds),
-                        "authors".PairWith(bookAuthorIds));
+                {
+                    repository.Update(bookTitle);
+                }
 
                 _successed = true;
 

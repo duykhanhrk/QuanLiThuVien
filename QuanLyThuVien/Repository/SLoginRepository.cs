@@ -8,18 +8,22 @@ using System.Linq;
 
 namespace QuanLyThuVien.Repository
 {
-    public class SLoginRepository : RepositoryAction<SLogin>
+    public class SLoginRepository
     {
-        public override List<SLogin> GetAll()
+        public List<SLogin> GetAll()
         {
             string commandText = @"SELECT L.name as loginname, U.name as username FROM sys.sysusers U
                                    LEFT JOIN sys.syslogins L ON L.sid = U.sid
                                    WHERE U.islogin = 1 AND L.name IS NOT NULL";
 
-            return Get(commandText);
+            SqlDataReader reader = DbConnection.ExecuteReader("SA", commandText, CommandType.Text);
+            List<SLogin> list = new List<SLogin>();
+            DataAdapter.Fill(reader, list);
+
+            return list;
         }
 
-        public override void Create(SLogin obj, params KeyValuePair<string, object>[] pairs)
+        public void Create(SLogin obj)
         {
             // Command Text
             string commandText = "sp_create_login";
@@ -31,7 +35,7 @@ namespace QuanLyThuVien.Repository
             SqlParameter parameterRoles = new SqlParameter("@roles", string.Join(",", obj.SRoles.Select(t => t.Name)));
 
             // Execute
-            int rows = DbConnection.ExecuteNonQuery(commandText, CommandType.StoredProcedure,
+            int rows = DbConnection.ExecuteNonQuery("SA", commandText, CommandType.StoredProcedure,
                 parameterLoginName, parameterUsername, parameterPassword, parameterRoles);
 
             // Exception
@@ -39,7 +43,7 @@ namespace QuanLyThuVien.Repository
                 throw new Exception("Tạo không thành công");
         }
 
-        public override void Update(SLogin obj, params KeyValuePair<string, object>[] pairs)
+        public void Update(SLogin obj)
         {
             // Command Text
             string commandText = "sp_update_login";
@@ -50,7 +54,7 @@ namespace QuanLyThuVien.Repository
             SqlParameter parameterRoles = new SqlParameter("@roles", string.Join(",", obj.SRoles.Select(t => t.Name)));
 
             // Execute
-            int rows = DbConnection.ExecuteNonQuery(commandText, CommandType.StoredProcedure,
+            int rows = DbConnection.ExecuteNonQuery("SA", commandText, CommandType.StoredProcedure,
                 parameterLoginName, parameterPassword, parameterRoles);
 
             // Exception
@@ -58,7 +62,7 @@ namespace QuanLyThuVien.Repository
                 throw new Exception("Cập nhật không thành công");
         }
 
-        public override void Delete(object loginname)
+        public void Delete(object loginname)
         {
             // Command Text
             string commandText = "sp_delete_login";
@@ -67,7 +71,7 @@ namespace QuanLyThuVien.Repository
             SqlParameter parameterLoginName = new SqlParameter("@loginname", loginname);
 
             // Execute
-            int rows = DbConnection.ExecuteNonQuery(commandText, CommandType.StoredProcedure,
+            int rows = DbConnection.ExecuteNonQuery("SA", commandText, CommandType.StoredProcedure,
                 parameterLoginName);
 
             // Exception

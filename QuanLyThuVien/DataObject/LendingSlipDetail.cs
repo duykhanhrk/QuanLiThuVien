@@ -14,6 +14,7 @@ namespace QuanLyThuVien.DataObject
 
         [Required]
         [DisplayName("Mã phiếu mượn")]
+        [Browsable(false)]
         [Column("LendingSlipId")]
         public long LendingSlipId { get; set; }
 
@@ -22,49 +23,48 @@ namespace QuanLyThuVien.DataObject
         [Column("DueBackDate")]
         public DateTime DueBackDate { get; set; }
 
+        [Browsable(false)]
         [DisplayName("Tình trạng sách")]
         [Column("BookStatus")]
         public short BookStatus { get; set; }
 
-        [Required]
-        [DisplayName("Ghi chú")]
-        [Column("Notes")]
-        public string Notes { get; set; }
-
-        [DisplayName("Nhận lại")]
+        [Browsable(false)]
         [Column("TookBack")]
         public bool TookBack { get; set; }
 
+        [DisplayName("Đã trả")]
+        public string TookBackDisplay
+        {
+            get { return TookBack ? "Có" : "Không"; }
+        }
+
+        [Browsable(false)]
         [DisplayName("Thời gian nhận lại")]
         [Column("TookBackAt")]
         public DateTime TookBackAt { get; set; }
 
+        [Browsable(false)]
         [DisplayName("Nhận lại bởi")]
         [Column("TookBackBy")]
         public string TookBackBy { get; set; }
 
+        [Browsable(false)]
         [DisplayName("Gia hạn")]
         [Column("Extended")]
         public bool Extended { get; set; }
 
+        [Browsable(false)]
         [DisplayName("Gia hạn bởi")]
         [Column("ExtendedBy")]
         public string ExtendedBy { get; set; }
 
         [DisplayName("Gia hạn vào lúc")]
+        [Browsable(false)]
         [Column("ExtendedAt")]
         public string ExtendedAt { get; set; }
 
         public LendingSlipDetail()
         {
-        }
-
-        public LendingSlipDetail(string bookId, long lendingSlipId, DateTime dueBackDate, string notes)
-        {
-            BookId = bookId;
-            LendingSlipId = lendingSlipId;
-            DueBackDate = dueBackDate;
-            Notes = notes;
         }
     }
 }

@@ -29,5 +29,10 @@ namespace QuanLyThuVien.Lib
         {
             _archives.Remove(key);
         }
+
+        public static void Clear()
+        {
+            _archives.Clear();
+        }
     }
 }

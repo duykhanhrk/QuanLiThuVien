@@ -230,6 +230,7 @@
             this.searchTB.TextPlaceholder = "Enter text";
             this.searchTB.UseSystemPasswordChar = false;
             this.searchTB.WordWrap = true;
+            this.searchTB.TextChange += new System.EventHandler(this.searchTB_TextChange);
             // 
             // deleteBT
             // 
@@ -531,6 +532,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(144)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -573,6 +575,7 @@
             this.listDGV.Name = "listDGV";
             this.listDGV.ReadOnly = true;
             this.listDGV.RowHeadersVisible = false;
+            this.listDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.listDGV.RowTemplate.Height = 40;
             this.listDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listDGV.Size = new System.Drawing.Size(1028, 361);

@@ -46,13 +46,14 @@
             this.deleteLoginBT = new System.Windows.Forms.Button();
             this.addLoginBT = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.fullBKBT = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.diffBKBT = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.fullRSBT = new System.Windows.Forms.Button();
             this.diffRSBT = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.fullBKBT = new System.Windows.Forms.Button();
+            this.diffBKBT = new System.Windows.Forms.Button();
+            this.restoreBT = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,8 +65,8 @@
             this.panel3.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -262,16 +263,6 @@
             this.tabPage3.Text = "Backup & Restore";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // fullBKBT
-            // 
-            this.fullBKBT.Location = new System.Drawing.Point(20, 41);
-            this.fullBKBT.Name = "fullBKBT";
-            this.fullBKBT.Size = new System.Drawing.Size(75, 23);
-            this.fullBKBT.TabIndex = 0;
-            this.fullBKBT.Text = "Full";
-            this.fullBKBT.UseVisualStyleBackColor = true;
-            this.fullBKBT.Click += new System.EventHandler(this.fullBKBT_Click);
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.groupBox2);
@@ -283,33 +274,11 @@
             this.panel5.Size = new System.Drawing.Size(1184, 558);
             this.panel5.TabIndex = 1;
             // 
-            // diffBKBT
-            // 
-            this.diffBKBT.Location = new System.Drawing.Point(101, 41);
-            this.diffBKBT.Name = "diffBKBT";
-            this.diffBKBT.Size = new System.Drawing.Size(75, 23);
-            this.diffBKBT.TabIndex = 1;
-            this.diffBKBT.Text = "Differential";
-            this.diffBKBT.UseVisualStyleBackColor = true;
-            this.diffBKBT.Click += new System.EventHandler(this.diffBKBT_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.fullBKBT);
-            this.groupBox1.Controls.Add(this.diffBKBT);
-            this.groupBox1.Location = new System.Drawing.Point(27, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1130, 100);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Backup";
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.restoreBT);
             this.groupBox2.Controls.Add(this.fullRSBT);
             this.groupBox2.Controls.Add(this.diffRSBT);
             this.groupBox2.Location = new System.Drawing.Point(27, 142);
@@ -339,6 +308,50 @@
             this.diffRSBT.UseVisualStyleBackColor = true;
             this.diffRSBT.Click += new System.EventHandler(this.diffRSBT_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.fullBKBT);
+            this.groupBox1.Controls.Add(this.diffBKBT);
+            this.groupBox1.Location = new System.Drawing.Point(27, 27);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1130, 100);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Backup";
+            // 
+            // fullBKBT
+            // 
+            this.fullBKBT.Location = new System.Drawing.Point(20, 41);
+            this.fullBKBT.Name = "fullBKBT";
+            this.fullBKBT.Size = new System.Drawing.Size(75, 23);
+            this.fullBKBT.TabIndex = 0;
+            this.fullBKBT.Text = "Full";
+            this.fullBKBT.UseVisualStyleBackColor = true;
+            this.fullBKBT.Click += new System.EventHandler(this.fullBKBT_Click);
+            // 
+            // diffBKBT
+            // 
+            this.diffBKBT.Location = new System.Drawing.Point(101, 41);
+            this.diffBKBT.Name = "diffBKBT";
+            this.diffBKBT.Size = new System.Drawing.Size(75, 23);
+            this.diffBKBT.TabIndex = 1;
+            this.diffBKBT.Text = "Differential";
+            this.diffBKBT.UseVisualStyleBackColor = true;
+            this.diffBKBT.Click += new System.EventHandler(this.diffBKBT_Click);
+            // 
+            // restoreBT
+            // 
+            this.restoreBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.restoreBT.Location = new System.Drawing.Point(1049, 41);
+            this.restoreBT.Name = "restoreBT";
+            this.restoreBT.Size = new System.Drawing.Size(75, 23);
+            this.restoreBT.TabIndex = 2;
+            this.restoreBT.Text = "Restore";
+            this.restoreBT.UseVisualStyleBackColor = true;
+            this.restoreBT.Click += new System.EventHandler(this.restoreBT_Click);
+            // 
             // SimulationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,8 +373,8 @@
             this.panel3.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -393,5 +406,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button fullBKBT;
         private System.Windows.Forms.Button diffBKBT;
+        private System.Windows.Forms.Button restoreBT;
     }
 }
