@@ -53,11 +53,11 @@ namespace QuanLyThuVien.Forms
         private void loginBT_Click(object sender, EventArgs e)
         {
             // Dev
-            if (iDTB.Text == "" || passwordTB.Text == "")
+            /*if (iDTB.Text == "" || passwordTB.Text == "")
             {
                 iDTB.Text = "LB00000011";
                 passwordTB.Text = "12";
-            }
+            }*/
 
             login();
         }

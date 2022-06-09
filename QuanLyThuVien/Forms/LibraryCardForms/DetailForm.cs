@@ -3,12 +3,6 @@ using QuanLyThuVien.Lib;
 using QuanLyThuVien.Repository;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyThuVien.Forms.LibraryCardForms
@@ -57,6 +51,8 @@ namespace QuanLyThuVien.Forms.LibraryCardForms
 
             readerDD.Enabled = false;
             feeTB.Enabled = false;
+            effectiveDateDP.Enabled = false;
+            effectiveEndDateDP.Enabled = false;
         }
 
         private void PrepareData()
@@ -112,11 +108,10 @@ namespace QuanLyThuVien.Forms.LibraryCardForms
             // Execute
             try
             {
-                _selfObject.EffectiveDate = effectiveDateDP.Value;
-                _selfObject.EffectiveEndDate = effectiveEndDateDP.Value;
-
                 if (mode == 0)
                 {
+                    _selfObject.EffectiveDate = effectiveDateDP.Value;
+                    _selfObject.EffectiveEndDate = effectiveEndDateDP.Value;
                     _selfObject.Fee = Decimal.Parse(feeTB.Text);
                     _selfObject.ReaderId = (readerDD.SelectedItem as Reader).Id;
                     _selfObject.CreatedBy = (Archive.Get("CurrentLibrarian") as Librarian).Id;
