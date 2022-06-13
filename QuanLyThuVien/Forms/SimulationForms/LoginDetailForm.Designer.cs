@@ -63,6 +63,7 @@
             this.passTB.Name = "passTB";
             this.passTB.Size = new System.Drawing.Size(339, 20);
             this.passTB.TabIndex = 7;
+            this.passTB.UseSystemPasswordChar = true;
             // 
             // label2
             // 
